@@ -1,0 +1,193 @@
+.view-switcher {
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+   padding: 14px 16px 0;
+}
+
+.view-switch-button {
+   min-width: 110px;
+   padding: 10px 18px;
+   border: 1px solid rgba(49,95,85,.22);
+   border-radius: 999px;
+   background: #fff;
+   color: #315f55;
+   font: inherit;
+   font-weight: 700;
+   cursor: pointer;
+   transition: .2s;
+}
+
+.view-switch-button:hover {
+   border-color: #315f55;
+}
+
+.view-switch-button.active {
+   background: #315f55;
+   border-color: #315f55;
+   color: #fff;
+}
+
+
+/* ===========================
+  3D NÉZET
+=========================== */
+
+.room-3d-view {
+   position: relative;
+   width: 100%;
+   min-height: 700px;
+   overflow: hidden;
+   border-radius: inherit;
+   background: #f5f2ec;
+}
+
+.room-3d-view[hidden] {
+   display: none;
+}
+
+.three-d-room {
+   position: relative;
+   width: 100%;
+   height: 700px;
+}
+
+.three-d-room canvas {
+   display: block;
+   width: 100% !important;
+   height: 100% !important;
+   touch-action: none;
+}
+
+
+/* ===========================
+  VEZÉRLŐSÁV
+=========================== */
+
+.three-d-controls {
+   position: absolute;
+   top: 14px;
+   left: 14px;
+   right: 14px;
+   z-index: 20;
+
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   gap: 8px;
+
+   padding: 10px;
+
+   border-radius: 18px;
+
+   background: rgba(255,255,255,.92);
+   backdrop-filter: blur(10px);
+
+   box-shadow:
+       0 8px 24px rgba(0,0,0,.08);
+}
+
+.three-d-control-button {
+   padding: 9px 13px;
+
+   border: 1px solid rgba(49,95,85,.18);
+   border-radius: 999px;
+
+   background: #fff;
+   color: #315f55;
+
+   font: inherit;
+   font-size: 13px;
+   font-weight: 700;
+
+   cursor: pointer;
+   transition: .2s;
+}
+
+.three-d-control-button:hover {
+   border-color: #315f55;
+}
+
+.three-d-control-button.active {
+   background: #315f55;
+   border-color: #315f55;
+   color: #fff;
+}
+
+
+/* ===========================
+  FALSZÍNEK
+=========================== */
+
+.wall-color-controls {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   gap: 10px;
+
+   margin-left: auto;
+}
+
+.wall-color-control {
+   display: flex;
+   align-items: center;
+   gap: 6px;
+
+   color: #315f55;
+   font-size: 12px;
+   font-weight: 700;
+}
+
+.wall-color-control input {
+   width: 30px;
+   height: 30px;
+
+   padding: 0;
+
+   border: 1px solid rgba(49,95,85,.2);
+   border-radius: 50%;
+
+   cursor: pointer;
+   background: transparent;
+}
+
+.wall-color-control input::-webkit-color-swatch-wrapper {
+   padding: 0;
+}
+
+.wall-color-control input::-webkit-color-swatch {
+   border: 0;
+   border-radius: 50%;
+}
+
+
+/* ===========================
+  MOBIL
+=========================== */
+
+@media (max-width: 900px) {
+
+   .room-3d-view {
+       min-height: 500px;
+   }
+
+   .three-d-room {
+       height: 500px;
+   }
+
+   .three-d-controls {
+       top: 8px;
+       left: 8px;
+       right: 8px;
+
+       padding: 8px;
+       gap: 6px;
+   }
+
+   .wall-color-controls {
+       width: 100%;
+       margin-left: 0;
+   }
+
+}
+

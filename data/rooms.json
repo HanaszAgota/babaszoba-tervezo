@@ -1,0 +1,35 @@
+[
+ {
+   "id": "babaszoba",
+   "name": "Natúr babaszoba",
+   "thumbnail": "images/rooms/babaszoba.jpg",
+   "walls": {
+     "back": "images/rooms/babaszoba.jpg",
+     "left": "images/rooms/babaszoba.jpg",
+     "right": "images/rooms/babaszoba.jpg",
+     "front": "images/rooms/babaszoba.jpg"
+   }
+ },
+ {
+   "id": "bezs",
+   "name": "Bézs dekorfal",
+   "thumbnail": "images/rooms/wall-bezs.png",
+   "walls": {
+     "back": "images/rooms/wall-bezs.png",
+     "left": "images/rooms/wall-bezs.png",
+     "right": "images/rooms/wall-bezs.png",
+     "front": "images/rooms/wall-bezs.png"
+   }
+ },
+ {
+   "id": "rozsaszin",
+   "name": "Rózsaszín dekorfal",
+   "thumbnail": "images/rooms/wall-rozsaszin.png",
+   "walls": {
+     "back": "images/rooms/wall-rozsaszin.png",
+     "left": "images/rooms/wall-rozsaszin.png",
+     "right": "images/rooms/wall-rozsaszin.png",
+     "front": "images/rooms/wall-rozsaszin.png"
+   }
+ }
+]
