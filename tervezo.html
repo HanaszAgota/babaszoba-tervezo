@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+   <meta charset="UTF-8">
+
+   <meta
+       name="viewport"
+       content="width=device-width, initial-scale=1.0"
+
+>
+   <meta
+       name="description"
+       content="MamaME és MiniQue online babaszoba-tervező. Állítsd össze saját babaszobádat bútorokkal, textilekkel és dekorációkkal."
+
+>
+   <title>MamaME × MiniQue Babaszoba Tervező</title>
+
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/responsive.css">
+
+   
+</head>
+
+<body>
+
+   <header class="site-header">
+
+       <a href="index.html" class="brand">
+           <span class="brand-main">MamaME</span>
+           <span class="brand-cross">×</span>
+           <span class="brand-secondary">MiniQue</span>
+       </a>
+
+       <div class="header-title">
+           <strong>Babaszoba Tervező</strong>
+           <span>Álmodd meg a saját babaszobádat</span>
+       </div>
+
+       <div class="header-actions">
+
+           <button
+               class="header-button header-button-light"
+               id="new-plan-button"
+               type="button"
+>
+               Új terv
+               
+           </button>
+
+           <button
+               class="header-button header-button-dark"
+               id="save-image-button"
+               type="button"
+>
+               Terv mentése
+               
+           </button>
+
+       </div>
+
+   </header>
+
+   <main class="designer-layout">
+
+       <aside class="product-panel">
+
+           <div class="panel-heading">
+
+               <span class="panel-kicker">Tervezés</span>
+
+               <h1>Válassz elemeket</h1>
+
+               <p>
+                   Kattints egy termékre, és helyezd el a
+                   babaszobában.
+               </p>
+
+           </div>
+
+           <nav
+               class="category-tabs"
+               aria-label="Termékkategóriák"
+
+>
+               <button
+                   class="category-tab active"
+                   type="button"
+                   data-category="rooms"
+>
+                   Kész Szobák
+                   
+               </button>
+
+               <button
+                   class="category-tab"
+                   type="button"
+                   data-category="walls"
+>
+                   Dekor falak
+                   
+               </button>
+
+               <button
+                   class="category-tab"
+                   type="button"
+                   data-category="chairs"
+>
+                   Fotelek
+                   
+               </button>
+
+               <button
+                   class="category-tab"
+                   type="button"
+                   data-category="furniture"
+>
+                   Bútorok
+                   
+               </button>
+
+               <button
+                   class="category-tab"
+                   type="button"
+                   data-category="montessori"
+>
+                   Montessori
+                   
+               </button>
+
+               <button
+                   class="category-tab"
+                   type="button"
+                   data-category="sofas"
+>
+                   Kanapék
+                   
+               </button>
+
+               <button
+                   class="category-tab"
+                   type="button"
+                   data-category="decor"
+>
+                   Dekor
+                   
+               </button>
+
+               <button
+                   class="category-tab"
+                   type="button"
+                   data-category="textiles"
+>
+                   Textilek
+                   
+               </button>
+
+               <button
+                   class="category-tab"
+                   type="button"
+                   data-category="toys"
+>
+                   Játékok
+                   
+               </button>
+
+           </nav>
+
+           <div
+               class="product-list"
+               id="product-list"
+               aria-live="polite"
+>
+               <!-- A termékeket a JavaScript tölti be ide. -->
+           </div>
+
+       </aside>
+
+      <section class="workspace-section">
+
+   <div class="workspace-toolbar">
+
+       <div class="workspace-title">
+
+           <strong>A te babaszobád</strong>
+
+           <span>
+               Húzd, méretezd és rendezd el az elemeket
+           </span>
+
+       </div>
+
+       <div class="workspace-tools">
+
+           <button
+               class="tool-button"
+               id="delete-selected"
+               type="button">
+
+               Törlés
+           </button>
+
+           <button
+               class="tool-button"
+               id="bring-forward"
+               type="button">
+
+               Előre
+           </button>
+
+           <button
+               class="tool-button"
+               id="send-backward"
+               type="button">
+
+               Hátra
+           </button>
+
+       </div>
+
+   </div>
+
+   <div
+       class="view-switcher"
+       aria-label="Tervezőnézet kiválasztása">
+
+
+      <div class="wall-selector">
+
+   <div class="wall-dropdown">
+
+
+       <button id="wall-back" class="wall-button active">
+           Hátsó fal
+       </button>
+
+       <button class="wall-menu-button">
+           ☰
+       </button>
+
+       <div class="wall-menu">
+            <label class="wall-color-button">
+               <span>🎨 Fal színe</span>
+               <input type="color" class="wall-color-picker" value="#ffffff" aria-label="Fal színének kiválasztása">
+            </label>
+
+           <button id="back-door">
+               🚪 Ajtó
+           </button>
+
+           <button id="back-window">
+               🪟 Ablak
+           </button>
+
+       </div>
+
+   </div>
+
+   <div class="wall-dropdown">
+
+       <button id="wall-left" class="wall-button">
+           Bal fal
+       </button>
+
+       <button class="wall-menu-button">
+           ☰
+       </button>
+
+       <div class="wall-menu">
+             <label class="wall-color-button">
+               <span>🎨 Fal színe</span>
+               <input type="color" class="wall-color-picker" value="#ffffff" aria-label="Fal színének kiválasztása">
+            </label>
+
+
+           <button id="left-door">
+               🚪 Ajtó
+           </button>
+
+           <button id="left-window">
+               🪟 Ablak
+           </button>
+
+       </div>
+
+   </div>
+
+   <div class="wall-dropdown">
+
+       <button id="wall-right" class="wall-button">
+           Jobb fal
+       </button>
+
+       <button class="wall-menu-button">
+           ☰
+       </button>
+
+       <div class="wall-menu">
+             <label class="wall-color-button">
+               <span>🎨 Fal színe</span>
+               <input type="color" class="wall-color-picker" value="#ffffff" aria-label="Fal színének kiválasztása">
+            </label>
+
+           <button id="right-door">
+               🚪 Ajtó
+           </button>
+
+           <button id="right-window">
+               🪟 Ablak
+           </button>
+
+       </div>
+
+   </div>
+
+   <div class="wall-dropdown">
+
+       <button id="wall-front" class="wall-button">
+           Elülső fal
+       </button>
+
+       <button class="wall-menu-button">
+           ☰
+       </button>
+
+       <div class="wall-menu">
+             <label class="wall-color-button">
+               <span>🎨 Fal színe</span>
+               <input type="color" class="wall-color-picker" value="#ffffff" aria-label="Fal színének kiválasztása">
+            </label>
+
+           <button id="front-door">
+               🚪 Ajtó
+           </button>
+
+           <button id="front-window">
+               🪟 Ablak
+           </button>
+
+       </div>
+
+   </div>
+
+</div>
+
+   </div>
+
+   <div class="canvas-shell">
+
+       <div
+           id="room-canvas"
+           class="room-canvas"
+           aria-label="Babaszoba tervezőfelület">
+
+
+<!-- Hátsó fal -->
+<div class="room-wall back-wall"></div>
+
+<!-- Bal fal -->
+<div class="room-wall left-wall"></div>
+
+<!-- Jobb fal -->
+<div class="room-wall right-wall"></div>
+
+<!-- Elülső fal -->
+<div class="room-wall front-wall"></div>
+
+<!-- Padló -->
+<div class="room-floor"></div>
+
+<!-- Illesztővonalak -->
+<div id="guide-x"></div>
+<div id="guide-y"></div>
+
+           <div class="canvas-placeholder">
+
+               <span class="placeholder-icon">✦</span>
+
+               <strong>
+                   Kezdd a szoba kiválasztásával
+               </strong>
+
+               <p>
+                   Válassz egy hátteret a bal oldali
+                   Szobák menüpontban.
+               </p>
+
+           </div>
+
+       </div>
+
+      
+</section>
+
+       <aside class="summary-panel">
+
+           <div class="summary-heading">
+
+               <span class="panel-kicker">Összesítés</span>
+
+               <h2>A kiválasztott elemek</h2>
+
+           </div>
+
+           <div
+               class="selected-products"
+               id="selected-products"
+>
+               <div class="empty-summary">
+                   Még nem választottál terméket.
+               </div>
+           </div>
+
+           <div class="summary-total">
+
+               <span>Tervezett összeg</span>
+
+               <strong id="total-price">
+                   0 Ft
+               </strong>
+
+           </div>
+
+           <button
+               class="summary-action"
+               id="request-quote-button"
+               type="button"
+               >
+
+               Ajánlatot kérek
+           </button>
+
+           <p class="summary-note">
+               Az ajánlatkérés nem jelent vásárlási
+               kötelezettséget.
+           </p>
+
+       </aside>
+
+   </main>
+
+   <div
+       class="toast"
+       id="toast"
+       role="status"
+       aria-live="polite"
+       >
+</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+   <script src="js/canvas.js"></script>
+   <script src="js/app.js"></script>
+   <script src="js/walls.js"></script>
+   <script src="js/rooms.js"></script>
+
+</body>

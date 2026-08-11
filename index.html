@@ -6,455 +6,752 @@
 
    <meta
        name="viewport"
-       content="width=device-width, initial-scale=1.0"
+       content="width=device-width, initial-scale=1.0">
 
->
    <meta
        name="description"
-       content="MamaME és MiniQue online babaszoba-tervező. Állítsd össze saját babaszobádat bútorokkal, textilekkel és dekorációkkal."
+       content="MamaME Designer prémium online babaszoba-tervező. Tervezd meg saját babaszobádat MiniQue termékekkel, dekorfalakkal és egyedi kivitelezéssel.">
 
->
-   <title>MamaME × MiniQue Babaszoba Tervező</title>
+   <title>MamaME Designer – Online babaszoba tervező</title>
 
-   <link rel="stylesheet" href="css/style.css">
-   <link rel="stylesheet" href="css/responsive.css">
-
-   
+   <link rel="stylesheet" href="css/landing.css">
 </head>
 
 <body>
 
-   <header class="site-header">
+   <!-- =========================
+        HEADER
+   ========================== -->
 
-       <a href="index.html" class="brand">
-           <span class="brand-main">MamaME</span>
-           <span class="brand-cross">×</span>
-           <span class="brand-secondary">MiniQue</span>
+   <header class="landing-header">
+
+       <a href="index.html" class="landing-brand">
+           <span class="brand-main">
+               Mama<span>ME</span>
+           </span>
+
+           <span class="brand-sub">
+               DESIGNER
+           </span>
        </a>
 
-       <div class="header-title">
-           <strong>Babaszoba Tervező</strong>
-           <span>Álmodd meg a saját babaszobádat</span>
-       </div>
+       <nav class="landing-nav" aria-label="Fő navigáció">
 
-       <div class="header-actions">
+           <a href="#inspiracio">
+               Inspiráció
+           </a>
 
-           <button
-               class="header-button header-button-light"
-               id="new-plan-button"
-               type="button"
->
-               Új terv
-               
-           </button>
+           <a href="#hogyan-mukodik">
+               Hogyan működik
+           </a>
 
-           <button
-               class="header-button header-button-dark"
-               id="save-image-button"
-               type="button"
->
-               Terv mentése
-               
-           </button>
+           <a href="#egyedi-tervezes">
+               Egyedi tervezés
+           </a>
 
-       </div>
+           <a
+               href="https://minique.hu"
+               target="_blank"
+               rel="noopener">
+
+               MiniQue
+           </a>
+
+       </nav>
+
+       <a
+           href="tervezo.html"
+           class="header-cta">
+
+           Tervezés indítása
+       </a>
 
    </header>
 
-   <main class="designer-layout">
 
-       <aside class="product-panel">
+   <main>
 
-           <div class="panel-heading">
+       <!-- =========================
+            HERO
+       ========================== -->
 
-               <span class="panel-kicker">Tervezés</span>
+       <section class="hero">
 
-               <h1>Válassz elemeket</h1>
+           <div class="hero-overlay"></div>
+
+           <div class="hero-content">
+
+               <div class="hero-brand">
+                   Mama<span>ME</span>
+                   <small>DESIGNER</small>
+               </div>
+
+               <h1>
+                   Tervezd meg azt a szobát,
+                   <br>
+                   ahol egy új történet kezdődik.
+               </h1>
 
                <p>
-                   Kattints egy termékre, és helyezd el a
-                   babaszobában.
+                   Próbáld ki a bútorokat, dekorációkat
+                   és falmintákat saját babaszobádban.
+                   Tervezd meg online – mi pedig segítünk
+                   megvalósítani.
+               </p>
+
+               <div class="hero-actions">
+
+                   <a
+                       href="tervezo.html"
+                       class="button button-primary">
+
+                       Tervezés indítása
+                       <span>→</span>
+                   </a>
+
+                   <a
+                       href="#inspiracio"
+                       class="button button-secondary">
+
+                       Inspirációk megtekintése
+                   </a>
+
+               </div>
+
+           </div>
+
+       </section>
+
+
+       <!-- =========================
+            NEM KELL ELKÉPZELNED
+       ========================== -->
+
+       <section
+           class="visual-flow section"
+           id="inspiracio">
+
+           <div class="section-heading centered">
+
+               <span class="section-kicker">
+                   MamaME Designer
+               </span>
+
+               <h2>
+                   Nem kell elképzelned.
+                   <em>Megnézheted.</em>
+               </h2>
+
+               <p>
+                   A MamaME Designer segítségével
+                   már a vásárlás előtt láthatod,
+                   hogyan működnek együtt a színek,
+                   bútorok és dekorációk.
                </p>
 
            </div>
 
-           <nav
-               class="category-tabs"
-               aria-label="Termékkategóriák"
 
->
-               <button
-                   class="category-tab active"
-                   type="button"
-                   data-category="rooms"
->
-                   Kész Szobák
-                   
-               </button>
+           <div class="flow-grid">
 
-               <button
-                   class="category-tab"
-                   type="button"
-                   data-category="walls"
->
-                   Dekor falak
-                   
-               </button>
+               <article class="flow-card">
 
-               <button
-                   class="category-tab"
-                   type="button"
-                   data-category="chairs"
->
-                   Fotelek
-                   
-               </button>
+                   <div class="flow-image flow-image-empty">
+                       <span>
+                           Üres szoba
+                       </span>
+                   </div>
 
-               <button
-                   class="category-tab"
-                   type="button"
-                   data-category="furniture"
->
-                   Bútorok
-                   
-               </button>
+                   <h3>
+                       Üres szoba
+                   </h3>
 
-               <button
-                   class="category-tab"
-                   type="button"
-                   data-category="montessori"
->
-                   Montessori
-                   
-               </button>
+               </article>
 
-               <button
-                   class="category-tab"
-                   type="button"
-                   data-category="sofas"
->
-                   Kanapék
-                   
-               </button>
 
-               <button
-                   class="category-tab"
-                   type="button"
-                   data-category="decor"
->
-                   Dekor
-                   
-               </button>
+               <div class="flow-arrow">
+                   →
+               </div>
 
-               <button
-                   class="category-tab"
-                   type="button"
-                   data-category="textiles"
->
-                   Textilek
-                   
-               </button>
 
-               <button
-                   class="category-tab"
-                   type="button"
-                   data-category="toys"
->
-                   Játékok
-                   
-               </button>
+               <article class="flow-card">
 
-           </nav>
+                   <div class="flow-image flow-image-plan">
+                       <span>
+                           Saját terv
+                       </span>
+                   </div>
 
-           <div
-               class="product-list"
-               id="product-list"
-               aria-live="polite"
->
-               <!-- A termékeket a JavaScript tölti be ide. -->
+                   <h3>
+                       Online terv
+                   </h3>
+
+               </article>
+
+
+               <div class="flow-arrow">
+                   →
+               </div>
+
+
+               <article class="flow-card">
+
+                   <div class="flow-image flow-image-real">
+                       <span>
+                           Megvalósítás
+                       </span>
+                   </div>
+
+                   <h3>
+                       Megvalósított babaszoba
+                   </h3>
+
+               </article>
+
            </div>
 
-       </aside>
+       </section>
 
-      <section class="workspace-section">
 
-   <div class="workspace-toolbar">
+       <!-- =========================
+            HOGYAN MŰKÖDIK
+       ========================== -->
 
-       <div class="workspace-title">
+       <section
+           class="how-section section"
+           id="hogyan-mukodik">
 
-           <strong>A te babaszobád</strong>
+
+           <div class="section-heading centered">
+
+               <span class="section-kicker">
+                   Egyszerű tervezés
+               </span>
+
+               <h2>
+                   Így működik
+               </h2>
+
+           </div>
+
+
+           <div class="steps-grid">
+
+               <article class="step-card">
+
+                   <span class="step-number">
+                       01
+                   </span>
+
+                   <h3>
+                       Add meg a szobát
+                   </h3>
+
+                   <p>
+                       Állítsd be a falakat,
+                       az ajtót és az ablakokat.
+                   </p>
+
+               </article>
+
+
+               <article class="step-card">
+
+                   <span class="step-number">
+                       02
+                   </span>
+
+                   <h3>
+                       Rendezd be
+                   </h3>
+
+                   <p>
+                       Válassz bútorokat,
+                       dekorációkat és falmintákat.
+                   </p>
+
+               </article>
+
+
+               <article class="step-card">
+
+                   <span class="step-number">
+                       03
+                   </span>
+
+                   <h3>
+                       Készítsd el a saját terved
+                   </h3>
+
+                   <p>
+                       Mozgasd, méretezd
+                       és kombináld az elemeket.
+                   </p>
+
+               </article>
+
+
+               <article class="step-card">
+
+                   <span class="step-number">
+                       04
+                   </span>
+
+                   <h3>
+                       Mi megvalósítjuk
+                   </h3>
+
+                   <p>
+                       Kérj ajánlatot a kiválasztott
+                       termékekre vagy akár
+                       a teljes babaszobára.
+                   </p>
+
+               </article>
+
+           </div>
+
+
+           <div class="section-action">
+
+               <a
+                   href="tervezo.html"
+                   class="button button-primary">
+
+                   Saját babaszobám megtervezése
+                   <span>→</span>
+               </a>
+
+           </div>
+
+       </section>
+
+
+       <!-- =========================
+            DESIGNER BEMUTATÓ
+       ========================== -->
+
+       <section class="designer-showcase section">
+
+           <div class="designer-preview">
+
+               <div class="preview-window">
+
+                   <div class="preview-topbar">
+
+                       <span></span>
+                       <span></span>
+                       <span></span>
+
+                   </div>
+
+                   <div class="preview-content">
+
+                       <div class="preview-sidebar">
+
+                           <div></div>
+                           <div></div>
+                           <div></div>
+                           <div></div>
+
+                       </div>
+
+                       <div class="preview-room">
+
+                           <span>
+                               MamaME Designer
+                           </span>
+
+                       </div>
+
+                   </div>
+
+               </div>
+
+           </div>
+
+
+           <div class="designer-copy">
+
+               <span class="section-kicker">
+                   Online tervezés
+               </span>
+
+               <h2>
+                   A tervezés
+                   most már játék.
+               </h2>
+
+               <p class="designer-lead">
+                   Mozgasd. Forgasd.
+                   Méretezd. Próbáld ki.
+               </p>
+
+
+               <div class="feature-grid">
+
+                   <span>
+                       ✓ több falas szobatervezés
+                   </span>
+
+                   <span>
+                       ✓ méretezés és forgatás
+                   </span>
+
+                   <span>
+                       ✓ bútorok és dekorációk
+                   </span>
+
+                   <span>
+                       ✓ saját összeállítás mentése
+                   </span>
+
+                   <span>
+                       ✓ dekorfalak kipróbálása
+                   </span>
+
+                   <span>
+                       ✓ ajánlatkérés a terv alapján
+                   </span>
+
+               </div>
+
+
+               <a
+                   href="tervezo.html"
+                   class="text-link">
+
+                   Kipróbálom a Designert
+                   →
+               </a>
+
+           </div>
+
+       </section>
+
+
+       <!-- =========================
+            STÍLUSOK
+       ========================== -->
+
+       <section class="styles-section section">
+
+           <div class="section-heading centered">
+
+               <span class="section-kicker">
+                   Inspiráció
+               </span>
+
+               <h2>
+                   Milyen lesz az ő szobája?
+               </h2>
+
+           </div>
+
+
+           <div class="styles-grid">
+
+               <article class="style-card style-rose">
+
+                   <div class="style-image"></div>
+
+                   <div class="style-content">
+
+                       <h3>
+                           Soft Rose
+                       </h3>
+
+                       <p>
+                           púderrózsaszín × bézs
+                       </p>
+
+                   </div>
+
+               </article>
+
+
+               <article class="style-card style-sage">
+
+                   <div class="style-image"></div>
+
+                   <div class="style-content">
+
+                       <h3>
+                           Sage Dreams
+                       </h3>
+
+                       <p>
+                           zsálya × természetes fa
+                       </p>
+
+                   </div>
+
+               </article>
+
+
+               <article class="style-card style-blue">
+
+                   <div class="style-image"></div>
+
+                   <div class="style-content">
+
+                       <h3>
+                           Little Blue
+                       </h3>
+
+                       <p>
+                           babakék × törtfehér
+                       </p>
+
+                   </div>
+
+               </article>
+
+
+               <article class="style-card style-natural">
+
+                   <div class="style-image"></div>
+
+                   <div class="style-content">
+
+                       <h3>
+                           Natural Minimal
+                       </h3>
+
+                       <p>
+                           bézs × fa × textúrák
+                       </p>
+
+                   </div>
+
+               </article>
+
+           </div>
+
+       </section>
+
+
+       <!-- =========================
+            AI ELŐKÉSZÍTÉS
+       ========================== -->
+
+       <section class="ai-section section">
+
+           <div class="ai-card">
+
+               <div class="ai-copy">
+
+                   <span class="section-kicker">
+                       Hamarosan
+                   </span>
+
+                   <h2>
+                       Válassz termékeket.
+                       <br>
+                       Az AI segít elrendezni.
+                   </h2>
+
+                   <p>
+                       Válogasd össze a neked tetsző
+                       MiniQue termékeket, add meg a szobád
+                       méreteit, és a MamaME Designer
+                       segít megkomponálni az elrendezést.
+                   </p>
+
+                   <div class="ai-badges">
+
+                       <span>
+                           Valódi termékek
+                       </span>
+
+                       <span>
+                           Valódi méretek
+                       </span>
+
+                       <span>
+                           Kivitelezhető megoldások
+                       </span>
+
+                   </div>
+
+               </div>
+
+               <div class="ai-visual">
+
+                   <span class="ai-symbol">
+                       ✦
+                   </span>
+
+                   <strong>
+                       AI ROOM STYLIST
+                   </strong>
+
+                   <small>
+                       fejlesztés alatt
+                   </small>
+
+               </div>
+
+           </div>
+
+       </section>
+
+
+       <!-- =========================
+            EGYEDI DEKORFAL
+       ========================== -->
+
+       <section
+           class="custom-section section"
+           id="egyedi-tervezes">
+
+
+           <div class="custom-copy">
+
+               <span class="section-kicker">
+                   MamaME egyedi kivitelezés
+               </span>
+
+               <h2>
+                   Ha látod a tervben,
+                   meg is tudjuk valósítani.
+               </h2>
+
+               <p>
+                   A Designerben elérhető dekorfalak
+                   és színek valódi, kivitelezhető
+                   MamaME megoldások.
+               </p>
+
+               <p>
+                   Dekorfalainkhoz 12 előre meghatározott
+                   festékszínből választhatsz.
+                   A színmintákat személyesen,
+                   kifestett farostlemezen is
+                   megtekintheted.
+               </p>
+
+               <a
+                   href="tervezo.html"
+                   class="button button-dark">
+
+                   Saját tervet készítek
+                   <span>→</span>
+               </a>
+
+           </div>
+
+
+           <div class="color-samples">
+
+               <div class="sample sample-1"></div>
+               <div class="sample sample-2"></div>
+               <div class="sample sample-3"></div>
+               <div class="sample sample-4"></div>
+               <div class="sample sample-5"></div>
+               <div class="sample sample-6"></div>
+               <div class="sample sample-7"></div>
+               <div class="sample sample-8"></div>
+               <div class="sample sample-9"></div>
+               <div class="sample sample-10"></div>
+               <div class="sample sample-11"></div>
+               <div class="sample sample-12"></div>
+
+           </div>
+
+       </section>
+
+
+       <!-- =========================
+            MAMAME × MINIQUE
+       ========================== -->
+
+       <section class="brand-section section">
 
            <span>
-               Húzd, méretezd és rendezd el az elemeket
+               MamaME Designer
+           </span>
+
+           <small>
+               ×
+           </small>
+
+           <strong>
+               minique
+           </strong>
+
+           <p>
+               Válogatott babaszobabútorok,
+               textilek, dekorációk és egyedi
+               szobatervezés egy helyen.
+           </p>
+
+       </section>
+
+
+       <!-- =========================
+            ZÁRÓ CTA
+       ========================== -->
+
+       <section class="final-cta">
+
+           <div class="final-overlay"></div>
+
+           <div class="final-content">
+
+               <span class="section-kicker">
+                   MamaME Designer
+               </span>
+
+               <h2>
+                   Az első közös szoba
+                   már most elkezdődhet.
+               </h2>
+
+               <p>
+                   Tervezd meg online,
+                   alakítsd saját ízlésedre,
+                   és mi segítünk megvalósítani.
+               </p>
+
+               <a
+                   href="tervezo.html"
+                   class="button button-primary">
+
+                   Ingyenes tervezés indítása
+                   <span>→</span>
+               </a>
+
+           </div>
+
+       </section>
+
+   </main>
+
+
+   <!-- =========================
+        FOOTER
+   ========================== -->
+
+   <footer class="landing-footer">
+
+       <div>
+
+           <strong>
+               MamaME Designer
+           </strong>
+
+           <span>
+               × minique
            </span>
 
        </div>
 
-       <div class="workspace-tools">
-
-           <button
-               class="tool-button"
-               id="delete-selected"
-               type="button">
-
-               Törlés
-           </button>
-
-           <button
-               class="tool-button"
-               id="bring-forward"
-               type="button">
-
-               Előre
-           </button>
-
-           <button
-               class="tool-button"
-               id="send-backward"
-               type="button">
-
-               Hátra
-           </button>
-
-       </div>
-
-   </div>
-
-   <div
-       class="view-switcher"
-       aria-label="Tervezőnézet kiválasztása">
-
-
-      <div class="wall-selector">
-
-   <div class="wall-dropdown">
-
-
-       <button id="wall-back" class="wall-button active">
-           Hátsó fal
-       </button>
-
-       <button class="wall-menu-button">
-           ☰
-       </button>
-
-       <div class="wall-menu">
-            <label class="wall-color-button">
-               <span>🎨 Fal színe</span>
-               <input type="color" class="wall-color-picker" value="#ffffff" aria-label="Fal színének kiválasztása">
-            </label>
-
-           <button id="back-door">
-               🚪 Ajtó
-           </button>
-
-           <button id="back-window">
-               🪟 Ablak
-           </button>
-
-       </div>
-
-   </div>
-
-   <div class="wall-dropdown">
-
-       <button id="wall-left" class="wall-button">
-           Bal fal
-       </button>
-
-       <button class="wall-menu-button">
-           ☰
-       </button>
-
-       <div class="wall-menu">
-             <label class="wall-color-button">
-               <span>🎨 Fal színe</span>
-               <input type="color" class="wall-color-picker" value="#ffffff" aria-label="Fal színének kiválasztása">
-            </label>
-
-
-           <button id="left-door">
-               🚪 Ajtó
-           </button>
-
-           <button id="left-window">
-               🪟 Ablak
-           </button>
-
-       </div>
-
-   </div>
-
-   <div class="wall-dropdown">
-
-       <button id="wall-right" class="wall-button">
-           Jobb fal
-       </button>
-
-       <button class="wall-menu-button">
-           ☰
-       </button>
-
-       <div class="wall-menu">
-             <label class="wall-color-button">
-               <span>🎨 Fal színe</span>
-               <input type="color" class="wall-color-picker" value="#ffffff" aria-label="Fal színének kiválasztása">
-            </label>
-
-           <button id="right-door">
-               🚪 Ajtó
-           </button>
-
-           <button id="right-window">
-               🪟 Ablak
-           </button>
-
-       </div>
-
-   </div>
-
-   <div class="wall-dropdown">
-
-       <button id="wall-front" class="wall-button">
-           Elülső fal
-       </button>
-
-       <button class="wall-menu-button">
-           ☰
-       </button>
-
-       <div class="wall-menu">
-             <label class="wall-color-button">
-               <span>🎨 Fal színe</span>
-               <input type="color" class="wall-color-picker" value="#ffffff" aria-label="Fal színének kiválasztása">
-            </label>
-
-           <button id="front-door">
-               🚪 Ajtó
-           </button>
-
-           <button id="front-window">
-               🪟 Ablak
-           </button>
-
-       </div>
-
-   </div>
-
-</div>
-
-   </div>
-
-   <div class="canvas-shell">
-
-       <div
-           id="room-canvas"
-           class="room-canvas"
-           aria-label="Babaszoba tervezőfelület">
-
-
-<!-- Hátsó fal -->
-<div class="room-wall back-wall"></div>
-
-<!-- Bal fal -->
-<div class="room-wall left-wall"></div>
-
-<!-- Jobb fal -->
-<div class="room-wall right-wall"></div>
-
-<!-- Elülső fal -->
-<div class="room-wall front-wall"></div>
-
-<!-- Padló -->
-<div class="room-floor"></div>
-
-<!-- Illesztővonalak -->
-<div id="guide-x"></div>
-<div id="guide-y"></div>
-
-           <div class="canvas-placeholder">
-
-               <span class="placeholder-icon">✦</span>
-
-               <strong>
-                   Kezdd a szoba kiválasztásával
-               </strong>
-
-               <p>
-                   Válassz egy hátteret a bal oldali
-                   Szobák menüpontban.
-               </p>
-
-           </div>
-
-       </div>
-
-      
-</section>
-
-       <aside class="summary-panel">
-
-           <div class="summary-heading">
-
-               <span class="panel-kicker">Összesítés</span>
-
-               <h2>A kiválasztott elemek</h2>
-
-           </div>
-
-           <div
-               class="selected-products"
-               id="selected-products"
->
-               <div class="empty-summary">
-                   Még nem választottál terméket.
-               </div>
-           </div>
-
-           <div class="summary-total">
-
-               <span>Tervezett összeg</span>
-
-               <strong id="total-price">
-                   0 Ft
-               </strong>
-
-           </div>
-
-           <button
-               class="summary-action"
-               id="request-quote-button"
-               type="button"
-
-               Ajánlatot kérek erre a szobára
-               >
-
-               Ajánlatot kérek
-           </button>
-
-           <p class="summary-note">
-               Az ajánlatkérés nem jelent vásárlási
-               kötelezettséget.
-           </p>
-
-       </aside>
-
-   </main>
-
-   <div
-       class="toast"
-       id="toast"
-       role="status"
-       aria-live="polite"
-       >
-</div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
-   <script src="js/canvas.js"></script>
-   <script src="js/app.js"></script>
-   <script src="js/walls.js"></script>
-   <script src="js/rooms.js"></script>
+       <p>
+           Online babaszoba-tervezés és egyedi kivitelezés.
+       </p>
+
+   </footer>
 
 </body>
 
