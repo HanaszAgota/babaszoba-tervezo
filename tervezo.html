@@ -12,446 +12,1487 @@
    <meta
        name="description"
        content="MamaME és MiniQue online babaszoba-tervező. Állítsd össze saját babaszobádat bútorokkal, textilekkel és dekorációkkal."
-
 >
+
    <title>MamaME × MiniQue Babaszoba Tervező</title>
 
    <link rel="stylesheet" href="css/style.css">
-   <link rel="stylesheet" href="css/responsive.css">
+   <link rel="stylesheet" href="css/designer-style.css">
+   <link rel="stylesheet" href="css/three-d-view.css">
 
-   
+   <style>
+
+       [hidden] {
+           display: none !important;
+       }
+
+       #room-3d-view {
+           width: 100%;
+           height: 650px;
+           overflow: hidden;
+           border-radius: 22px;
+           background: #f5f2ec;
+       }
+
+       #three-d-frame {
+           display: block;
+           width: 100%;
+           height: 100%;
+           border: 0;
+           background: #f5f2ec;
+       }
+
+   </style>
+
 </head>
+
 
 <body>
 
-   <header class="site-header">
 
-       <a href="index.html" class="brand">
-           <span class="brand-main">MamaME</span>
-           <span class="brand-cross">×</span>
-           <span class="brand-secondary">MiniQue</span>
-       </a>
+<!-- =========================================================
+    FEJLÉC
+========================================================== -->
 
-       <div class="header-title">
-           <strong>Babaszoba Tervező</strong>
-           <span>Álmodd meg a saját babaszobádat</span>
-       </div>
+<header class="site-header">
 
-       <div class="header-actions">
+   <a
+       href="index.html"
+       class="brand">
 
-           <button
-               class="header-button header-button-light"
-               id="new-plan-button"
-               type="button"
->
-               Új terv
-               
-           </button>
 
-           <button
-               class="header-button header-button-dark"
-               id="save-image-button"
-               type="button"
->
-               Terv mentése
-               
-           </button>
+       <span class="brand-main">
+           MamaME
+       </span>
 
-       </div>
+       <span class="brand-cross">
+           ×
+       </span>
 
-   </header>
+       <span class="brand-secondary">
+           MiniQue
+       </span>
 
-   <main class="designer-layout">
+   </a>
 
-       <aside class="product-panel">
 
-           <div class="panel-heading">
+   <div class="header-title">
 
-               <span class="panel-kicker">Tervezés</span>
+       <strong>
+           Babaszoba Tervező
+       </strong>
 
-               <h1>Válassz elemeket</h1>
+       <span>
+           Álmodd meg a saját babaszobádat
+       </span>
 
-               <p>
-                   Kattints egy termékre, és helyezd el a
-                   babaszobában.
-               </p>
+   </div>
 
-           </div>
 
-           <nav
-               class="category-tabs"
-               aria-label="Termékkategóriák"
+   <div class="header-actions">
 
->
-               <button
-                   class="category-tab active"
-                   type="button"
-                   data-category="rooms"
->
-                   Kész Szobák
-                   
-               </button>
+       <button
+           class="header-button header-button-light"
+           id="new-plan-button"
+           type="button">
 
-               <button
-                   class="category-tab"
-                   type="button"
-                   data-category="walls"
->
-                   Dekor falak
-                   
-               </button>
+           Új terv
+       </button>
 
-               <button
-                   class="category-tab"
-                   type="button"
-                   data-category="chairs"
->
-                   Fotelek
-                   
-               </button>
+       <button
+           class="header-button header-button-dark"
+           id="save-image-button"
+           type="button">
 
-               <button
-                   class="category-tab"
-                   type="button"
-                   data-category="furniture"
->
-                   Bútorok
-                   
-               </button>
+           Terv mentése
+       </button>
 
-               <button
-                   class="category-tab"
-                   type="button"
-                   data-category="montessori"
->
-                   Montessori
-                   
-               </button>
+   </div>
 
-               <button
-                   class="category-tab"
-                   type="button"
-                   data-category="sofas"
->
-                   Kanapék
-                   
-               </button>
+</header>
 
-               <button
-                   class="category-tab"
-                   type="button"
-                   data-category="decor"
->
-                   Dekor
-                   
-               </button>
 
-               <button
-                   class="category-tab"
-                   type="button"
-                   data-category="textiles"
->
-                   Textilek
-                   
-               </button>
+<!-- =========================================================
+    FŐ TERVEZŐ
+========================================================== -->
 
-               <button
-                   class="category-tab"
-                   type="button"
-                   data-category="toys"
->
-                   Játékok
-                   
-               </button>
+<main class="designer-layout">
 
-           </nav>
 
-           <div
-               class="product-list"
-               id="product-list"
-               aria-live="polite"
->
-               <!-- A termékeket a JavaScript tölti be ide. -->
-           </div>
+   <!-- =====================================================
+        BAL OLDALI TERMÉKPANEL
+   ====================================================== -->
 
-       </aside>
+   <aside class="product-panel">
 
-      <section class="workspace-section">
+       <div class="panel-heading">
 
-   <div class="workspace-toolbar">
-
-       <div class="workspace-title">
-
-           <strong>A te babaszobád</strong>
-
-           <span>
-               Húzd, méretezd és rendezd el az elemeket
+           <span class="panel-kicker">
+               Tervezés
            </span>
 
-       </div>
-
-       <div class="workspace-tools">
-
-           <button
-               class="tool-button"
-               id="delete-selected"
-               type="button">
-
-               Törlés
-           </button>
-
-           <button
-               class="tool-button"
-               id="bring-forward"
-               type="button">
-
-               Előre
-           </button>
-
-           <button
-               class="tool-button"
-               id="send-backward"
-               type="button">
-
-               Hátra
-           </button>
-
-       </div>
-
-   </div>
-
-   <div
-       class="view-switcher"
-       aria-label="Tervezőnézet kiválasztása">
-
-
-      <div class="wall-selector">
-
-   <div class="wall-dropdown">
-
-
-       <button id="wall-back" class="wall-button active">
-           Hátsó fal
-       </button>
-
-       <button class="wall-menu-button">
-           ☰
-       </button>
-
-       <div class="wall-menu">
-            <label class="wall-color-button">
-               <span>🎨 Fal színe</span>
-               <input type="color" class="wall-color-picker" value="#ffffff" aria-label="Fal színének kiválasztása">
-            </label>
-
-           <button id="back-door">
-               🚪 Ajtó
-           </button>
-
-           <button id="back-window">
-               🪟 Ablak
-           </button>
-
-       </div>
-
-   </div>
-
-   <div class="wall-dropdown">
-
-       <button id="wall-left" class="wall-button">
-           Bal fal
-       </button>
-
-       <button class="wall-menu-button">
-           ☰
-       </button>
-
-       <div class="wall-menu">
-             <label class="wall-color-button">
-               <span>🎨 Fal színe</span>
-               <input type="color" class="wall-color-picker" value="#ffffff" aria-label="Fal színének kiválasztása">
-            </label>
-
-
-           <button id="left-door">
-               🚪 Ajtó
-           </button>
-
-           <button id="left-window">
-               🪟 Ablak
-           </button>
-
-       </div>
-
-   </div>
-
-   <div class="wall-dropdown">
-
-       <button id="wall-right" class="wall-button">
-           Jobb fal
-       </button>
-
-       <button class="wall-menu-button">
-           ☰
-       </button>
-
-       <div class="wall-menu">
-             <label class="wall-color-button">
-               <span>🎨 Fal színe</span>
-               <input type="color" class="wall-color-picker" value="#ffffff" aria-label="Fal színének kiválasztása">
-            </label>
-
-           <button id="right-door">
-               🚪 Ajtó
-           </button>
-
-           <button id="right-window">
-               🪟 Ablak
-           </button>
-
-       </div>
-
-   </div>
-
-   <div class="wall-dropdown">
-
-       <button id="wall-front" class="wall-button">
-           Elülső fal
-       </button>
-
-       <button class="wall-menu-button">
-           ☰
-       </button>
-
-       <div class="wall-menu">
-             <label class="wall-color-button">
-               <span>🎨 Fal színe</span>
-               <input type="color" class="wall-color-picker" value="#ffffff" aria-label="Fal színének kiválasztása">
-            </label>
-
-           <button id="front-door">
-               🚪 Ajtó
-           </button>
-
-           <button id="front-window">
-               🪟 Ablak
-           </button>
-
-       </div>
-
-   </div>
-
-</div>
-
-   </div>
-
-   <div class="canvas-shell">
-
-       <div
-           id="room-canvas"
-           class="room-canvas"
-           aria-label="Babaszoba tervezőfelület">
-
-
-<!-- Hátsó fal -->
-<div class="room-wall back-wall"></div>
-
-<!-- Bal fal -->
-<div class="room-wall left-wall"></div>
-
-<!-- Jobb fal -->
-<div class="room-wall right-wall"></div>
-
-<!-- Elülső fal -->
-<div class="room-wall front-wall"></div>
-
-<!-- Padló -->
-<div class="room-floor"></div>
-
-<!-- Illesztővonalak -->
-<div id="guide-x"></div>
-<div id="guide-y"></div>
-
-           <div class="canvas-placeholder">
-
-               <span class="placeholder-icon">✦</span>
-
-               <strong>
-                   Kezdd a szoba kiválasztásával
-               </strong>
-
-               <p>
-                   Válassz egy hátteret a bal oldali
-                   Szobák menüpontban.
-               </p>
-
-           </div>
-
-       </div>
-
-      
-</section>
-
-       <aside class="summary-panel">
-
-           <div class="summary-heading">
-
-               <span class="panel-kicker">Összesítés</span>
-
-               <h2>A kiválasztott elemek</h2>
-
-           </div>
-
-           <div
-               class="selected-products"
-               id="selected-products"
->
-               <div class="empty-summary">
-                   Még nem választottál terméket.
-               </div>
-           </div>
-
-           <div class="summary-total">
-
-               <span>Tervezett összeg</span>
-
-               <strong id="total-price">
-                   0 Ft
-               </strong>
-
-           </div>
-
-           <button
-               class="summary-action"
-               id="request-quote-button"
-               type="button"
-               >
-
-               Ajánlatot kérek
-           </button>
-
-           <p class="summary-note">
-               Az ajánlatkérés nem jelent vásárlási
-               kötelezettséget.
+           <h1>
+               Válassz elemeket
+           </h1>
+
+           <p>
+               Kattints egy termékre, és helyezd el a
+               babaszobában.
            </p>
 
-       </aside>
+       </div>
 
-   </main>
 
-   <div
-       class="toast"
-       id="toast"
-       role="status"
-       aria-live="polite"
-       >
+       <nav
+           class="category-tabs"
+           aria-label="Termékkategóriák">
+
+
+           <button
+               class="category-tab active"
+               type="button"
+               data-category="rooms">
+
+               Kész Szobák
+           </button>
+
+
+           <button
+               class="category-tab"
+               type="button"
+               data-category="walls">
+
+               Dekor falak
+           </button>
+
+
+           <button
+               class="category-tab"
+               type="button"
+               data-category="chairs">
+               Fotelek
+           </button>
+
+
+           <button
+               class="category-tab"
+               type="button"
+               data-category="furniture">
+
+               Bútorok
+           </button>
+
+
+           <button
+               class="category-tab"
+               type="button"
+               data-category="montessori">
+
+               Montessori
+           </button>
+
+
+           <button
+               class="category-tab"
+               type="button"
+               data-category="sofas">
+
+               Kanapék
+           </button>
+
+
+           <button
+               class="category-tab"
+               type="button"
+               data-category="decor">
+               Dekor
+           </button>
+
+
+           <button
+               class="category-tab"
+               type="button"
+               data-category="textiles">
+
+               Textilek
+           </button>
+
+
+           <button
+               class="category-tab"
+               type="button"
+               data-category="toys">
+               Játékok
+           </button>
+
+       </nav>
+
+
+       <div
+           class="product-list"
+           id="product-list"
+           aria-live="polite">
+
+           <!-- A termékeket az app.js tölti be. -->
+       </div>
+
+   </aside>
+
+
+   <!-- =====================================================
+        KÖZÉPSŐ TERVEZŐTERÜLET
+   ====================================================== -->
+
+   <section class="workspace-section">
+
+
+       <!-- =================================================
+            FELSŐ TOOLBAR
+       ================================================== -->
+
+       <div class="workspace-toolbar">
+
+           <div class="workspace-title">
+
+               <strong>
+                   A te babaszobád
+               </strong>
+
+               <span>
+                   Húzd, méretezd és rendezd el az elemeket
+               </span>
+
+           </div>
+
+
+           <div class="workspace-tools">
+
+               <button
+                   class="tool-button"
+                   id="delete-selected"
+                   type="button">
+
+                   Törlés
+               </button>
+
+
+               <button
+                   class="tool-button"
+                   id="bring-forward"
+                   type="button">
+
+                   Előre
+               </button>
+
+
+               <button
+                   class="tool-button"
+                   id="send-backward"
+                   type="button">
+
+                   Hátra
+               </button>
+
+           </div>
+
+       </div>
+
+
+       <!-- =================================================
+            2D / 3D VÁLTÓ
+       ================================================== -->
+
+       <div
+           class="view-switcher"
+           aria-label="Tervezőnézet kiválasztása">
+
+
+           <div class="view-mode-switcher">
+
+               <button
+                   id="show-2d-button"
+                   class="view-mode-button active"
+                   type="button">
+
+                   2D nézet
+               </button>
+
+
+               <button
+                   id="show-3d-button"
+                   class="view-mode-button"
+                   type="button">
+
+                   3D nézet
+               </button>
+
+           </div>
+
+
+           <!-- =============================================
+                FALVÁLASZTÓ
+                CSAK 2D-BEN LÁTSZIK
+           ============================================== -->
+
+           <div
+               class="wall-selector"
+               id="wall-selector">
+
+
+
+               <!-- HÁTSÓ FAL -->
+
+               <div class="wall-dropdown">
+
+                   <button
+                       id="wall-back"
+                       class="wall-button active"
+                       type="button">
+
+                       Hátsó fal
+                   </button>
+
+
+                   <button
+                       class="wall-menu-button"
+                       type="button"
+                       aria-label="Hátsó fal beállításai">
+
+                       ☰
+                   </button>
+
+
+                   <div class="wall-menu">
+
+                       <label class="wall-color-button">
+
+                           <span>
+                               🎨 Fal színe
+                           </span>
+
+                           <input
+                               type="color"
+                               class="wall-color-picker"
+                               value="#ffffff"
+                               aria-label="Hátsó fal színének kiválasztása">
+
+
+                       </label>
+
+
+                       <button
+                           id="back-door"
+                           type="button">
+
+                           🚪 Ajtó
+                       </button>
+
+
+                       <button
+                           id="back-window"
+                           type="button">
+
+                           🪟 Ablak
+                       </button>
+
+                   </div>
+
+               </div>
+
+
+               <!-- BAL FAL -->
+
+               <div class="wall-dropdown">
+
+                   <button
+                       id="wall-left"
+                       class="wall-button"
+                       type="button">
+
+                       Bal fal
+                   </button>
+
+
+                   <button
+                       class="wall-menu-button"
+                       type="button"
+                       aria-label="Bal fal beállításai">
+
+                       ☰
+                   </button>
+
+
+                   <div class="wall-menu">
+
+                       <label class="wall-color-button">
+
+                           <span>
+                               🎨 Fal színe
+                           </span>
+
+                           <input
+                               type="color"
+                               class="wall-color-picker"
+                               value="#ffffff"
+                               aria-label="Bal fal színének kiválasztása">
+
+
+                       </label>
+
+
+                       <button
+                           id="left-door"
+                           type="button">
+
+                           🚪 Ajtó
+                       </button>
+
+
+                       <button
+                           id="left-window"
+                           type="button">
+
+                           🪟 Ablak
+                       </button>
+
+                   </div>
+
+               </div>
+
+
+               <!-- JOBB FAL -->
+
+               <div class="wall-dropdown">
+
+                   <button
+                       id="wall-right"
+                       class="wall-button"
+                       type="button">
+
+                       Jobb fal
+                   </button>
+
+
+                   <button
+                       class="wall-menu-button"
+                       type="button"
+                       aria-label="Jobb fal beállításai">
+
+                       ☰
+                   </button>
+
+
+                   <div class="wall-menu">
+
+                       <label class="wall-color-button">
+
+                           <span>
+                               🎨 Fal színe
+                           </span>
+
+                           <input
+                               type="color"
+                               class="wall-color-picker"
+                               value="#ffffff"
+                               aria-label="Jobb fal színének kiválasztása">
+
+
+                       </label>
+
+
+                       <button
+                           id="right-door"
+                           type="button">
+
+                           🚪 Ajtó
+                       </button>
+
+
+                       <button
+                           id="right-window"
+                           type="button">
+
+                           🪟 Ablak
+                       </button>
+
+                   </div>
+
+               </div>
+
+
+               <!-- ELÜLSŐ FAL -->
+
+               <div class="wall-dropdown">
+
+                   <button
+                       id="wall-front"
+                       class="wall-button"
+                       type="button">
+
+                       Elülső fal
+                   </button>
+
+
+                   <button
+                       class="wall-menu-button"
+                       type="button"
+                       aria-label="Elülső fal beállításai">
+
+                       ☰
+                   </button>
+
+
+                   <div class="wall-menu">
+
+                       <label class="wall-color-button">
+
+                           <span>
+                               🎨 Fal színe
+                           </span>
+
+                           <input
+                               type="color"
+                               class="wall-color-picker"
+                               value="#ffffff"
+                               aria-label="Elülső fal színének kiválasztása">
+
+
+                       </label>
+
+
+                       <button
+                           id="front-door"
+                           type="button">
+
+                           🚪 Ajtó
+                       </button>
+
+
+                       <button
+                           id="front-window"
+                           type="button">
+
+                           🪟 Ablak
+                       </button>
+
+                   </div>
+
+               </div>
+
+           </div>
+
+       </div>
+
+
+       <!-- =================================================
+            CANVAS
+       ================================================== -->
+
+       <div class="canvas-shell">
+
+
+           <!-- =============================================
+                2D NÉZET
+           ============================================== -->
+
+           <div
+               id="room-canvas"
+               class="room-canvas"
+               aria-label="Babaszoba tervezőfelület">
+
+
+               <div class="room-wall back-wall"></div>
+
+               <div class="room-wall left-wall"></div>
+
+               <div class="room-wall right-wall"></div>
+
+               <div class="room-wall front-wall"></div>
+
+               <div class="room-floor"></div>
+
+
+               <div id="guide-x"></div>
+
+               <div id="guide-y"></div>
+
+
+               <div class="canvas-placeholder">
+
+                   <span class="placeholder-icon">
+                       ✦
+                   </span>
+
+                   <strong>
+                       Kezdd a szoba kiválasztásával
+                   </strong>
+
+                   <p>
+                       Válassz egy hátteret a bal oldali
+                       Szobák menüpontban.
+                   </p>
+
+               </div>
+
+           </div>
+
+
+           <!-- =============================================
+                3D NÉZET
+           ============================================== -->
+
+           <div
+               id="room-3d-view"
+               class="room-3d-view"
+               hidden>
+
+
+               <iframe
+                   id="three-d-frame"
+                   src="3d.html"
+                   title="MiniQue 3D babaszoba"
+                   loading="eager"
+                   allowfullscreen>
+
+               </iframe>
+
+           </div>
+
+       </div>
+
+   </section>
+
+
+   <!-- =====================================================
+        JOBB OLDALI ÖSSZESÍTŐ
+   ====================================================== -->
+
+   <aside class="summary-panel">
+
+       <div class="summary-heading">
+
+           <span class="panel-kicker">
+               Összesítés
+           </span>
+
+           <h2>
+               A kiválasztott elemek
+           </h2>
+
+       </div>
+
+
+       <div
+           class="selected-products"
+           id="selected-products">
+
+
+           <div class="empty-summary">
+               Még nem választottál terméket.
+           </div>
+
+       </div>
+
+
+       <div class="summary-total">
+
+           <span>
+               Tervezett összeg
+           </span>
+
+           <strong id="total-price">
+               0 Ft
+           </strong>
+
+       </div>
+
+
+       <button
+           class="summary-action"
+           id="request-quote-button"
+           type="button">
+
+           Ajánlatot kérek
+       </button>
+
+
+       <p class="summary-note">
+           Az ajánlatkérés nem jelent vásárlási
+           kötelezettséget.
+       </p>
+
+   </aside>
+
+</main>
+
+
+<!-- =========================================================
+    TOAST
+========================================================== -->
+
+<div
+   class="toast"
+   id="toast"
+   role="status"
+   aria-live="polite">
+
 </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
-   <script src="js/canvas.js"></script>
-   <script src="js/app.js"></script>
-   <script src="js/walls.js"></script>
-   <script src="js/rooms.js"></script>
+<!-- =========================================================
+    2D SCRIPTEK
+========================================================== -->
+
+<script
+   src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js">
+
+</script>
+
+<script src="js/canvas.js"></script>
+
+<script src="js/app.js"></script>
+
+<script src="js/walls.js"></script>
+
+<script src="js/rooms.js"></script>
+
+
+<!-- =========================================================
+    2D / 3D NÉZETVÁLTÁS + 3D ÖSSZESÍTŐ
+========================================================== -->
+
+<script>
+
+document.addEventListener(
+   "DOMContentLoaded",
+   function () {
+
+
+       /* =====================================================
+          ELEMEK
+       ====================================================== */
+
+       const show2dButton =
+           document.getElementById(
+               "show-2d-button"
+           );
+
+       const show3dButton =
+           document.getElementById(
+               "show-3d-button"
+           );
+
+       const roomCanvas =
+           document.getElementById(
+               "room-canvas"
+           );
+
+       const room3dView =
+           document.getElementById(
+               "room-3d-view"
+           );
+
+       const wallSelector =
+           document.getElementById(
+               "wall-selector"
+           );
+
+       const selectedProducts =
+           document.getElementById(
+               "selected-products"
+           );
+
+       const totalPrice =
+           document.getElementById(
+               "total-price"
+           );
+
+
+       if (
+           !show2dButton ||
+           !show3dButton ||
+           !roomCanvas ||
+           !room3dView ||
+           !selectedProducts ||
+           !totalPrice
+       ) {
+
+           console.error(
+               "Nem található minden szükséges 2D / 3D elem."
+           );
+
+           return;
+       }
+
+
+       /* =====================================================
+          3D TERMÉKLISTA
+       ====================================================== */
+
+       window.threeDProducts = [];
+
+
+       /* =====================================================
+          2D ÖSSZESÍTŐ MENTÉSE
+       ====================================================== */
+
+       let savedTwoDSummaryHTML =
+           selectedProducts.innerHTML;
+
+       let savedTwoDTotal =
+           totalPrice.textContent;
+
+
+       /* =====================================================
+          ÁR KIOLVASÁSA
+       ====================================================== */
+
+       function getProductPrice(product) {
+
+           if (!product) {
+               return 0;
+           }
+
+
+           const rawPrice =
+               product.price ??
+               product.salePrice ??
+               product.unitPrice ??
+               0;
+
+
+           if (
+               typeof rawPrice ===
+               "number"
+           ) {
+
+               return Number.isFinite(
+                   rawPrice
+               )
+                   ? rawPrice
+                   : 0;
+           }
+
+
+           const cleanedPrice =
+               String(rawPrice)
+                   .replace(/\s/g, "")
+                   .replace(/Ft/gi, "")
+                   .replace(/[^\d,.-]/g, "")
+                   .replace(/\./g, "")
+                   .replace(",", ".");
+
+
+           const parsedPrice =
+               Number(
+                   cleanedPrice
+               );
+
+
+           if (
+               Number.isFinite(
+                   parsedPrice
+               )
+           ) {
+
+               return parsedPrice;
+           }
+
+
+           return 0;
+       }
+
+
+       /* =====================================================
+          ÁR FORMÁZÁSA
+       ====================================================== */
+
+       function formatPrice(price) {
+
+           return new Intl.NumberFormat(
+               "hu-HU",
+               {
+                   maximumFractionDigits: 0
+               }
+           ).format(
+               Number(price) || 0
+           ) + " Ft";
+       }
+
+
+       /* =====================================================
+          3D ÖSSZESÍTŐ
+       ====================================================== */
+
+       function renderThreeDSummary() {
+
+           selectedProducts.innerHTML =
+               "";
+
+
+           /* NINCS TERMÉK */
+
+           if (
+               threeDProducts.length ===
+               0
+           ) {
+
+               selectedProducts.innerHTML = `
+                   <div class="empty-summary">
+                       Még nem választottál terméket.
+                   </div>
+               `;
+
+               totalPrice.textContent =
+                   "0 Ft";
+
+               return;
+           }
+
+
+           /* =============================================
+              TERMÉKEK CSOPORTOSÍTÁSA
+           ============================================== */
+
+           const groupedProducts =
+               new Map();
+
+
+           let calculatedTotal =
+               0;
+
+
+           threeDProducts.forEach(
+               function (item) {
+
+                   if (
+                       !item ||
+                       !item.product
+                   ) {
+
+                       return;
+                   }
+
+
+                   const product =
+                       item.product;
+
+
+                   const productKey =
+                       String(
+                           product.id ??
+                           product.name ??
+                           product.image ??
+                           item.instanceId
+                       );
+
+
+                   const price =
+                       getProductPrice(
+                           product
+                       );
+
+
+                   calculatedTotal +=
+                       price;
+
+
+                   if (
+                       !groupedProducts.has(
+                           productKey
+                       )
+                   ) {
+
+                       groupedProducts.set(
+                           productKey,
+                           {
+                               product:
+                                   product,
+
+                               quantity:
+                                   0
+                           }
+                       );
+                   }
+
+
+                   groupedProducts
+                       .get(productKey)
+                       .quantity += 1;
+
+               }
+           );
+
+
+           /* =============================================
+              ÖSSZESÍTŐ ELEMEK LÉTREHOZÁSA
+           ============================================== */
+
+           groupedProducts.forEach(
+               function (group) {
+
+                   const product =
+                       group.product;
+
+                   const quantity =
+                       group.quantity;
+
+                   const unitPrice =
+                       getProductPrice(
+                           product
+                       );
+
+
+                   const summaryItem =
+                       document.createElement(
+                           "div"
+                       );
+
+                   summaryItem.className =
+                       "summary-item";
+
+
+                   /* KÉP */
+
+                   const imageBox =
+                       document.createElement(
+                           "div"
+                       );
+
+                   imageBox.className =
+                       "summary-item-image";
+
+
+                   if (product.image) {
+
+                       const image =
+                           document.createElement(
+                               "img"
+                           );
+
+                       image.src =
+                           product.image;
+
+                       image.alt =
+                           product.name ||
+                           "Termék";
+
+                       image.draggable =
+                           false;
+
+
+                       imageBox.appendChild(
+                           image
+                       );
+                   }
+
+
+                   /* SZÖVEG */
+
+                   const content =
+                       document.createElement(
+                           "div"
+                       );
+
+                   content.className =
+                       "summary-item-content";
+
+
+                   const name =
+                       document.createElement(
+                           "strong"
+                       );
+
+                   name.textContent =
+                       product.name ||
+                       "Névtelen termék";
+
+
+                   const price =
+                       document.createElement(
+                           "span"
+                       );
+
+
+                   if (
+                       unitPrice > 0
+                   ) {
+
+                       price.textContent =
+                           formatPrice(
+                               unitPrice
+                           );
+
+                   } else {
+
+                       price.textContent =
+                           "Ár egyeztetés alapján";
+                   }
+
+
+                   content.appendChild(
+                       name
+                   );
+
+                   content.appendChild(
+                       price
+                   );
+
+
+                   /* DARABSZÁM */
+
+                   const quantityBox =
+                       document.createElement(
+                           "div"
+                       );
+
+                   quantityBox.className =
+                       "summary-item-quantity";
+
+
+                   const quantityText =
+                       document.createElement(
+                           "strong"
+                       );
+
+                   quantityText.textContent =
+                       quantity + " db";
+
+
+                   quantityBox.appendChild(
+                       quantityText
+                   );
+
+
+                   /* ÖSSZEÁLLÍTÁS */
+
+                   summaryItem.appendChild(
+                       imageBox
+                   );
+
+                   summaryItem.appendChild(
+                       content
+                   );
+
+                   summaryItem.appendChild(
+                       quantityBox
+                   );
+
+
+                   selectedProducts.appendChild(
+                       summaryItem
+                   );
+
+               }
+           );
+
+
+           /* =============================================
+              TELJES ÁR
+           ============================================== */
+
+           totalPrice.textContent =
+               formatPrice(
+                   calculatedTotal
+               );
+
+       }
+
+
+       /* =====================================================
+          2D NÉZET
+       ====================================================== */
+
+       function showTwoDView() {
+
+           roomCanvas.hidden =
+               false;
+
+           room3dView.hidden =
+               true;
+
+
+           show2dButton.classList.add(
+               "active"
+           );
+
+           show3dButton.classList.remove(
+               "active"
+           );
+
+
+           if (wallSelector) {
+
+               wallSelector.hidden =
+                   false;
+           }
+
+
+           /* 2D összesítő visszaállítása */
+
+           selectedProducts.innerHTML =
+               savedTwoDSummaryHTML;
+
+           totalPrice.textContent =
+               savedTwoDTotal;
+
+       }
+
+
+       /* =====================================================
+          3D NÉZET
+       ====================================================== */
+
+       function showThreeDView() {
+
+           /*
+            * A 2D összesítőt csak akkor
+            * mentjük el, amikor ténylegesen
+            * 2D nézetből váltunk át.
+            */
+
+           if (
+               !roomCanvas.hidden
+           ) {
+
+               savedTwoDSummaryHTML =
+                   selectedProducts.innerHTML;
+
+               savedTwoDTotal =
+                   totalPrice.textContent;
+           }
+
+
+           roomCanvas.hidden =
+               true;
+
+           room3dView.hidden =
+               false;
+
+
+           show2dButton.classList.remove(
+               "active"
+           );
+
+           show3dButton.classList.add(
+               "active"
+           );
+
+
+           if (wallSelector) {
+
+               wallSelector.hidden =
+                   true;
+           }
+
+
+           renderThreeDSummary();
+
+       }
+
+
+       /* =====================================================
+          2D GOMB
+       ====================================================== */
+
+       show2dButton.addEventListener(
+           "click",
+           showTwoDView
+       );
+
+
+       /* =====================================================
+          3D GOMB
+       ====================================================== */
+
+       show3dButton.addEventListener(
+           "click",
+           showThreeDView
+       );
+
+
+       /* =====================================================
+          3D.HTML ÜZENETEK
+       ====================================================== */
+
+       window.addEventListener(
+           "message",
+           function (event) {
+
+
+               /*
+                * CSAK A SAJÁT 3D.HTML
+                * ÜZENETEIT FOGADJUK.
+                */
+
+               if (
+                   event.origin !==
+                   window.location.origin
+               ) {
+
+                   return;
+               }
+
+
+               const data =
+                   event.data;
+
+
+               if (
+                   !data ||
+                   typeof data !==
+                   "object"
+               ) {
+
+                   return;
+               }
+
+
+               /* =============================================
+                  3D TERMÉK HOZZÁADVA
+               ============================================== */
+
+               if (
+                   data.type ===
+                   "MINIQUE_3D_PRODUCT_ADDED"
+               ) {
+
+                   if (
+                       !data.instanceId ||
+                       !data.product
+                   ) {
+
+                       console.warn(
+                           "Hiányos 3D termékadat:",
+                           data
+                       );
+
+                       return;
+                   }
+
+
+                   /*
+                    * Ugyanazt az instanceId-t
+                    * ne vehessük fel kétszer.
+                    */
+
+                   const alreadyExists =
+                       threeDProducts.some(
+                           function (item) {
+
+                               return (
+                                   item.instanceId ===
+                                   data.instanceId
+                               );
+                           }
+                       );
+
+
+                   if (
+                       !alreadyExists
+                   ) {
+
+                       window.threeDProducts.push(
+                           {
+                               instanceId:
+                                   data.instanceId,
+
+                               product:
+                                   data.product
+                           }
+                       );
+                   }
+
+
+                   console.log(
+                       "3D termék hozzáadva:",
+                       data.product.name,
+                       threeDProducts
+                   );
+
+
+                   /*
+                    * Ha éppen 3D-ben vagyunk,
+                    * azonnal frissítjük a panelt.
+                    */
+
+                   if (
+                       !room3dView.hidden
+                   ) {
+
+                       renderThreeDSummary();
+                   }
+
+
+                   return;
+               }
+
+
+               /* =============================================
+                  3D TERMÉK TÖRÖLVE
+               ============================================== */
+
+               if (
+                   data.type ===
+                   "MINIQUE_3D_PRODUCT_REMOVED"
+               ) {
+
+                   const index =
+                       window.threeDProducts.findIndex(
+                           function (item) {
+
+                               return (
+                                   item.instanceId ===
+                                   data.instanceId
+                               );
+                           }
+                       );
+
+
+                   if (
+                       index !==
+                       -1
+                   ) {
+
+                       threeDProducts.splice(
+                           index,
+                           1
+                       );
+                   }
+
+
+                   console.log(
+                       "3D termék törölve:",
+                       data.instanceId,
+                       threeDProducts
+                   );
+
+
+                   if (
+                       !room3dView.hidden
+                   ) {
+
+                       renderThreeDSummary();
+                   }
+
+               }
+
+           }
+       );
+
+
+       /* =====================================================
+          INDULÁSKOR 2D
+       ====================================================== */
+
+       showTwoDView();
+
+   }
+);
+
+</script>
+
 
 </body>
+
+</html>

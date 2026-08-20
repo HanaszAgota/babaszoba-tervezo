@@ -1,0 +1,806 @@
+/* =========================================================
+  MamaME Designer – Landing Style Theme
+  Csak vizuális felülírás, működéshez nem nyúl
+========================================================= */
+
+:root {
+   --bg: #f8f4f1;
+   --surface: #ffffff;
+   --surface-soft: #fbf7f4;
+   --surface-green: #f7efeb;
+
+   --text: #2f2927;
+   --heading: #2f2927;
+
+   --accent: #c98278;
+   --accent-soft: #ead0ca;
+   --accent-dark: #ad6d65;
+
+   --border: #e8ddd7;
+
+   --shadow:
+       0 18px 50px
+       rgba(60, 44, 38, 0.08);
+}
+
+
+/* =========================================================
+  OLDAL
+========================================================= */
+
+html,
+body {
+   background:
+       #f8f4f1;
+}
+
+body {
+   color:
+       var(--text);
+}
+
+
+/* =========================================================
+  HEADER
+========================================================= */
+
+.site-header {
+   border-bottom:
+       1px solid
+       rgba(47, 41, 39, 0.06);
+
+   background:
+       rgba(255, 255, 255, 0.94);
+
+   box-shadow:
+       0 4px 18px
+       rgba(60, 44, 38, 0.03);
+}
+
+.brand-main {
+   color:
+       var(--text);
+
+   font-weight: 400;
+}
+
+.brand-cross {
+   color:
+       var(--accent);
+}
+
+.brand-secondary {
+   color:
+       var(--text);
+
+   font-weight: 700;
+}
+
+.header-title strong {
+   color:
+       var(--text);
+}
+
+.header-title span {
+   color:
+       var(--text-soft, #766d68);
+}
+
+.header-button {
+   border-radius: 12px;
+}
+
+.header-button-light {
+   background:
+       #f4ece8;
+
+   color:
+       var(--text);
+}
+
+.header-button-dark {
+   background:
+       var(--accent);
+
+   color:
+       #ffffff;
+
+   box-shadow:
+       0 10px 26px
+       rgba(201, 130, 120, 0.24);
+}
+
+.header-button-dark:hover {
+   background:
+       var(--accent-dark);
+}
+
+
+/* =========================================================
+  FŐ PANELEK
+========================================================= */
+
+.product-panel,
+.summary-panel,
+.workspace-section {
+   border:
+       1px solid
+       var(--border);
+
+   background:
+       rgba(255, 255, 255, 0.95);
+
+   box-shadow:
+       var(--shadow);
+}
+
+.product-panel,
+.summary-panel {
+   background:
+       #ffffff;
+}
+
+
+/* =========================================================
+  BAL PANEL
+========================================================= */
+
+.panel-kicker {
+   color:
+       var(--accent);
+
+   letter-spacing:
+       0.16em;
+}
+
+.panel-heading h1,
+.summary-heading h2 {
+   color:
+       var(--text);
+
+   font-family:
+       Georgia,
+       "Times New Roman",
+       serif;
+
+   font-weight:
+       400;
+}
+
+.panel-heading p {
+   color:
+       #766d68;
+}
+
+
+/* =========================================================
+  KATEGÓRIÁK
+========================================================= */
+
+.category-tab {
+   border:
+       1px solid
+       var(--border);
+
+   background:
+       #ffffff;
+
+   color:
+       #514a46;
+
+   box-shadow:
+       none;
+}
+
+.category-tab:hover {
+   border-color:
+       rgba(201, 130, 120, 0.55);
+
+   background:
+       #fbf4f1;
+}
+
+.category-tab.active {
+   border-color:
+       var(--accent);
+
+   background:
+       var(--accent);
+
+   color:
+       #ffffff;
+
+   box-shadow:
+       0 7px 18px
+       rgba(201, 130, 120, 0.18);
+}
+
+
+/* =========================================================
+  TERMÉKLISTA
+========================================================= */
+
+.product-list::-webkit-scrollbar-thumb,
+.selected-products::-webkit-scrollbar-thumb {
+   background:
+       rgba(201, 130, 120, 0.22);
+}
+
+.product-list-header h3 {
+   color:
+       var(--text);
+}
+
+.product-list-header span {
+   color:
+       #8c817b;
+}
+
+
+/* =========================================================
+  TERMÉKKÁRTYÁK
+========================================================= */
+
+.product-card {
+   border:
+       1px solid
+       var(--border);
+
+   background:
+       #ffffff;
+
+   color:
+       var(--text);
+}
+
+.product-card:hover {
+   border-color:
+       rgba(201, 130, 120, 0.6);
+
+   box-shadow:
+       0 12px 28px
+       rgba(60, 44, 38, 0.08);
+}
+
+.product-card:focus-visible {
+   outline:
+       3px solid
+       rgba(201, 130, 120, 0.24);
+}
+
+.product-card-image {
+   background:
+       #fbf8f6;
+}
+
+.product-card-name,
+.product-card-content strong {
+   color:
+       var(--text);
+}
+
+.product-card-content span {
+   color:
+       #7b716c;
+}
+
+.product-card-price {
+   color:
+       var(--accent-dark);
+}
+
+
+/* =========================================================
+  BETÖLTÉSI ÁLLAPOT
+========================================================= */
+
+.product-loading,
+.product-empty-state,
+.product-error {
+   border:
+       1px solid
+       var(--border);
+
+   background:
+       #fbf8f6;
+
+   color:
+       #766d68;
+}
+
+.product-loading-spinner {
+   border:
+       3px solid
+       rgba(201, 130, 120, 0.16);
+
+   border-top-color:
+       var(--accent);
+}
+
+
+/* =========================================================
+  FAL KÁRTYÁK
+========================================================= */
+
+.wall-product-card {
+   border:
+       1px solid
+       var(--border);
+
+   background:
+       #ffffff;
+}
+
+.wall-product-card:hover,
+.wall-product-card.selected {
+   border-color:
+       var(--accent);
+}
+
+.wall-product-card span {
+   color:
+       var(--text);
+}
+
+
+/* =========================================================
+  WORKSPACE TOOLBAR
+========================================================= */
+
+.workspace-toolbar {
+   border-bottom:
+       1px solid
+       var(--border);
+
+   background:
+       rgba(255, 255, 255, 0.92);
+}
+
+.workspace-title strong {
+   color:
+       var(--text);
+}
+
+.workspace-title span {
+   color:
+       #766d68;
+}
+
+.tool-button {
+   border:
+       1px solid
+       var(--border);
+
+   background:
+       #ffffff;
+
+   color:
+       #514a46;
+}
+
+.tool-button:not(:disabled):hover {
+   border-color:
+       rgba(201, 130, 120, 0.5);
+
+   background:
+       #fbf1ed;
+}
+
+
+/* =========================================================
+  CANVAS KÖRNYEZET
+========================================================= */
+
+.canvas-shell {
+   background:
+       #faf7f5;
+}
+
+.room-canvas {
+   border:
+       1px solid
+       #eadfd9;
+
+   background:
+       linear-gradient(
+           180deg,
+           #fbf8f6 0%,
+           #f7f0ec 72%,
+           #ead7cb 72%,
+           #ead7cb 100%
+       );
+
+   box-shadow:
+       inset 0 0 0 1px
+       rgba(255, 255, 255, 0.7),
+       0 16px 38px
+       rgba(60, 44, 38, 0.07);
+}
+
+.canvas-placeholder {
+   color:
+       #877c76;
+}
+
+.placeholder-icon {
+   background:
+       var(--accent-soft);
+
+   color:
+       var(--accent-dark);
+}
+
+.canvas-placeholder strong {
+   color:
+       var(--text);
+}
+
+
+/* =========================================================
+  MOZGATHATÓ TERMÉKEK
+========================================================= */
+
+.room-item img {
+   filter:
+       drop-shadow(
+           0 12px 18px
+           rgba(60, 44, 38, 0.14)
+       );
+}
+
+.room-item.selected::after {
+   border-color:
+       var(--accent);
+}
+
+.resize-handle {
+   background:
+       var(--text);
+}
+
+.rotate-handle {
+   background:
+       var(--accent);
+}
+
+.delete-handle {
+   background:
+       #a95f5b;
+}
+
+
+/* =========================================================
+  JOBB OLDALI ÖSSZESÍTÉS
+========================================================= */
+
+.summary-heading h2 {
+   color:
+       var(--text);
+}
+
+.empty-summary {
+   border:
+       1px dashed
+       #e4d5ce;
+
+   color:
+       #847a75;
+
+   background:
+       #fbf8f6;
+}
+
+.summary-item {
+   border-bottom:
+       1px solid
+       var(--border);
+}
+
+.summary-item-image {
+   background:
+       #fbf6f3;
+}
+
+.summary-item-content strong {
+   color:
+       var(--text);
+}
+
+.summary-item-content span,
+.summary-item-wall {
+   color:
+       #817671;
+}
+
+.summary-item-remove {
+   background:
+       #f5e4df;
+
+   color:
+       #9d5d55;
+}
+
+.summary-item-remove:hover {
+   background:
+       #edd3cc;
+}
+
+.summary-total {
+   border-top:
+       1px solid
+       var(--border);
+
+   border-bottom:
+       1px solid
+       var(--border);
+}
+
+.summary-total span {
+   color:
+       #766d68;
+}
+
+.summary-total strong {
+   color:
+       var(--text);
+}
+
+.summary-action {
+   border-radius:
+       12px;
+
+   background:
+       var(--accent);
+
+   color:
+       #ffffff;
+
+   box-shadow:
+       0 12px 28px
+       rgba(201, 130, 120, 0.24);
+}
+
+.summary-action:hover {
+   background:
+       var(--accent-dark);
+}
+
+.summary-note {
+   color:
+       #8a817c;
+}
+
+
+/* =========================================================
+  KATEGÓRIAÁLLAPOT
+========================================================= */
+
+.category-status {
+   border:
+       1px solid
+       var(--border);
+
+   background:
+       #fbf8f6;
+
+   color:
+       var(--text);
+}
+
+
+/* =========================================================
+  TOAST
+========================================================= */
+
+.toast {
+   background:
+       var(--text);
+
+   color:
+       #ffffff;
+
+   box-shadow:
+       0 14px 30px
+       rgba(60, 44, 38, 0.18);
+}
+
+
+/* =========================================================
+  GUIDE LINES
+========================================================= */
+
+.guide-line {
+   background:
+       var(--accent);
+
+   opacity:
+       0.7;
+}
+
+
+/* =========================================================
+  FALVÁLASZTÓ
+========================================================= */
+
+.wall-selector {
+   gap:
+       10px;
+}
+
+.wall-button {
+   border:
+       1px solid
+       #eadcd6;
+
+   background:
+       #fbf5f2;
+
+   color:
+       #5d514d;
+}
+
+.wall-menu-button {
+   border:
+       1px solid
+       #eadcd6;
+
+   border-left:
+       none;
+
+   background:
+       #f7ebe7;
+
+   color:
+       #9a6861;
+}
+
+.wall-button:hover {
+   border-color:
+       #dcbeb6;
+
+   background:
+       #f6e7e2;
+
+   color:
+       #4e4542;
+}
+
+.wall-menu-button:hover {
+   border-color:
+       #dcbeb6;
+
+   background:
+       #efd8d1;
+
+   color:
+       #7d514b;
+}
+
+.wall-button.active {
+   border-color:
+       var(--accent);
+
+   background:
+       var(--accent-soft);
+
+   color:
+       var(--accent-dark);
+
+   box-shadow:
+       0 5px 16px
+       rgba(201, 130, 120, 0.15);
+}
+
+.wall-dropdown:has(.wall-button.active)
+.wall-menu-button {
+   border-color:
+       var(--accent);
+
+   background:
+       var(--accent);
+
+   color:
+       #ffffff;
+}
+
+.wall-menu {
+   border:
+       1px solid
+       var(--border);
+
+   background:
+       #ffffff;
+
+   box-shadow:
+       0 12px 30px
+       rgba(60, 44, 38, 0.12);
+}
+
+.wall-menu button {
+   background:
+       #ffffff;
+
+   color:
+       #514a46;
+}
+
+.wall-menu button:hover {
+   background:
+       #fbefeb;
+
+   color:
+       var(--accent-dark);
+}
+
+
+/* =========================================================
+  FAL LÁTHATÓSÁG
+========================================================= */
+
+.wall-visibility-button {
+   background:
+       var(--accent-soft);
+
+   color:
+       var(--accent-dark);
+}
+
+.wall-visibility-button:hover {
+   background:
+       #dfb9b1;
+}
+
+
+/* =========================================================
+  MOBIL / TABLET FINOMÍTÁS
+========================================================= */
+
+@media (max-width: 1100px) {
+
+   .product-panel,
+   .summary-panel,
+   .workspace-section {
+       box-shadow:
+           0 12px 32px
+           rgba(60, 44, 38, 0.06);
+   }
+}
+
+
+@media (max-width: 700px) {
+
+   body {
+       background:
+           #f8f4f1;
+   }
+
+   .site-header {
+       background:
+           rgba(255, 255, 255, 0.97);
+   }
+
+   .product-panel,
+   .summary-panel,
+   .workspace-section {
+       border-radius:
+           20px;
+   }
+
+   .category-tab.active {
+       background:
+           var(--accent);
+   }
+
+   .wall-button.active {
+       background:
+           var(--accent-soft);
+
+       color:
+           var(--accent-dark);
+   }
+
+   .summary-action {
+       border-radius:
+           12px;
+   }
+}

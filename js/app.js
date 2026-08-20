@@ -126,28 +126,27 @@ document.addEventListener("DOMContentLoaded", function () {
    const image = escapeHtml(product.image || "");
 
    return `
-     <button
-       class="product-card"
-       onclick="selectProduct('${product.id}')"
-       type="button"
-       data-product-id="${id}"
-       aria-label="${name}"
+       <button
+           class="product-card"
+           onclick="selectProduct('${product.id}')"
+           type="button"
+           data-product-id="${id}"
+           aria-label="${name}">
 
-       <span class="product-card-image">
-         <img
-           src="${image}"
-           alt="${name}"
-           loading="lazy"
-           draggable="false"
+           <span class="product-card-image">
+               <img
+                   src="${image}"
+                   alt="${name}"
+                   loading="lazy"
+                   draggable="false">
+           </span>
 
-       </span>
-
-       <span class="product-card-name">
-         ${name}
-       </span>
-     </button>
+           <span class="product-card-name">
+               ${name}
+           </span>
+       </button>
    `;
- }
+}
 
  /**
   * Az aktív kategóriagomb kijelölése.
@@ -207,38 +206,150 @@ document.addEventListener("DOMContentLoaded", function () {
    });
  });
 
- window.selectProduct = function(id) {
+ window.selectProduct = function (id) {
+
    const product = allProducts.find(function (item) {
        return item.id === id;
    });
 
    if (!product) {
-       console.error("Nem található termék:", id);
+       console.error(
+           "Nem található termék:",
+           id
+       );
+
        return;
    }
 
+
+   /*
+    * FALMINTÁK
+    *
+    * Ezek maradnak a jelenlegi walls.js kezelésében.
+    */
+
    if (product.category === "walls") {
-       if (typeof window.applyWall === "function") {
-           window.applyWall(product);
+
+   const room3dView =
+       document.getElementById(
+           "room-3d-view"
+       );
+
+   const threeDFrame =
+       document.getElementById(
+           "three-d-frame"
+       );
+
+   const isThreeDActive =
+       room3dView &&
+       !room3dView.hidden;
+
+
+   if (isThreeDActive) {
+
+       if (
+           threeDFrame &&
+           threeDFrame.contentWindow
+       ) {
+
+           threeDFrame.contentWindow.postMessage(
+               {
+                   type: "MINIQUE_APPLY_3D_WALL",
+                   product: product
+               },
+               window.location.origin
+           );
        }
 
        return;
    }
 
-   if (typeof window.addProductToRoom === "function") {
-       window.addProductToRoom(product);
-   } else {
-       console.error("Az addProductToRoom függvény nem érhető el.");
+
+   if (
+       typeof window.applyWall ===
+       "function"
+   ) {
+
+       window.applyWall(
+           product
+       );
    }
+
+   return;
 }
+
+   /*
+    * MEGNÉZZÜK, HOGY A 3D NÉZET AKTÍV-E
+    */
+
+   const room3dView =
+       document.getElementById(
+           "room-3d-view"
+       );
+
+   const threeDFrame =
+       document.getElementById(
+           "three-d-frame"
+       );
+
+   const isThreeDActive =
+       room3dView &&
+       !room3dView.hidden;
+
+
+   /*
+    * 3D NÉZET
+    */
+
+   if (isThreeDActive) {
+
+       if (
+           !threeDFrame ||
+           !threeDFrame.contentWindow
+       ) {
+           console.error(
+               "A 3D iframe nem található."
+           );
+
+           return;
+       }
+
+       threeDFrame.contentWindow.postMessage(
+           {
+               type: "MINIQUE_ADD_PRODUCT",
+               product: product
+           },
+           window.location.origin
+       );
+
+       console.log(
+           "Termék elküldve a 3D szobába:",
+           product.name
+       );
+
+       return;
+   }
+
+
+   /*
+    * 2D NÉZET
+    */
+
+   if (
+       typeof window.addProductToRoom ===
+       "function"
+   ) {
+
+       window.addProductToRoom(product);
+
+   } else {
+
+       console.error(
+           "Az addProductToRoom függvény nem érhető el."
+       );
+   }
+
+};
 
  loadProducts();
 });
-
-const newPlanButton = document.getElementById("new-plan-button");
-
-if (newPlanButton) {
-    newPlanButton.addEventListener("click", function () {
-        clearRoom();
-    });
-}

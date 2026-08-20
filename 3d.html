@@ -2,6 +2,7 @@
 <html lang="hu">
 
 <head>
+
    <meta charset="UTF-8">
 
    <meta
@@ -11,7 +12,9 @@
 
    <title>MiniQue 3D babaszoba</title>
 
+
    <style>
+
        * {
            box-sizing: border-box;
        }
@@ -29,10 +32,101 @@
            font-family: Arial, sans-serif;
        }
 
+
+       /* =====================================================
+          FELSŐ VEZÉRLŐSÁV
+       ====================================================== */
+
+       .product-controls {
+           position: fixed;
+
+           top: 75px;
+           left: 50%;
+
+           transform: translateX(-50%);
+
+           z-index: 100;
+
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           flex-wrap: wrap;
+
+           gap: 8px;
+
+           width: max-content;
+           max-width: calc(100% - 30px);
+
+           padding: 8px 12px;
+
+           background:
+               rgba(255, 255, 255, 0.92);
+
+           border-radius: 20px;
+
+           box-shadow:
+               0 6px 25px
+               rgba(0, 0, 0, 0.10);
+
+           backdrop-filter: blur(10px);
+           -webkit-backdrop-filter: blur(10px);
+       }
+
+
+       .product-controls button,
+       .product-controls select {
+
+           border:
+               1px solid
+               rgba(49, 95, 85, 0.18);
+
+           background: #ffffff;
+           color: #315f55;
+
+           padding: 9px 14px;
+
+           border-radius: 999px;
+
+           font-size: 13px;
+           font-weight: 600;
+
+           cursor: pointer;
+       }
+
+
+       .product-controls button {
+           transition:
+               transform 0.15s ease,
+               background 0.15s ease;
+       }
+
+
+       .product-controls button:hover {
+           background: #f3eee8;
+           transform: translateY(-1px);
+       }
+
+
+       .control-separator {
+           width: 1px;
+           height: 28px;
+
+           background:
+               rgba(49, 95, 85, 0.15);
+
+           margin: 0 2px;
+       }
+
+
+       /* =====================================================
+          THREE.JS TERÜLET
+       ====================================================== */
+
        #three-d-room {
            width: 100%;
            height: 100%;
        }
+
 
        #three-d-room canvas {
            display: block;
@@ -40,133 +134,487 @@
            height: 100%;
        }
 
-       .room-title {
-           position: fixed;
-           top: 20px;
-           left: 50%;
-           z-index: 10;
-           transform: translateX(-50%);
-           margin: 0;
-           padding: 11px 20px;
-           border-radius: 999px;
-           background: rgba(255, 255, 255, 0.9);
-           color: #315f55;
-           font-size: 18px;
-           box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-           backdrop-filter: blur(8px);
-       }
+
+       /* =====================================================
+          ALSÓ SEGÍTSÉG
+       ====================================================== */
 
        .room-help {
            position: fixed;
+
            bottom: 20px;
            left: 50%;
+
            z-index: 10;
-           transform: translateX(-50%);
-           padding: 10px 16px;
-           border-radius: 999px;
-           background: rgba(49, 95, 85, 0.92);
+
+           transform:
+               translateX(-50%);
+
+           padding:
+               10px 16px;
+
+           border-radius:
+               999px;
+
+           background:
+               rgba(49, 95, 85, 0.92);
+
            color: #ffffff;
+
            font-size: 13px;
+
            text-align: center;
        }
+
+
+       @media (max-width: 850px) {
+
+           .product-controls {
+               top: 10px;
+               border-radius: 16px;
+           }
+
+           .product-controls button,
+           .product-controls select {
+               padding: 7px 10px;
+               font-size: 11px;
+           }
+
+           .room-help {
+               bottom: 10px;
+               width: calc(100% - 20px);
+           }
+
+       }
+
    </style>
 
+
    <script type="importmap">
-       {
-           "imports": {
-               "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
-               "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
-           }
+   {
+       "imports": {
+           "three":
+               "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+
+           "three/addons/":
+               "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
        }
+   }
    </script>
+
 </head>
+
 
 <body>
 
-   <h1 class="room-title">
-       MiniQue 3D babaszoba
-   </h1>
+
+   <!-- =====================================================
+        VEZÉRLŐSÁV
+   ====================================================== -->
+
+   <div
+       class="product-controls"
+       id="product-controls">
+
+
+       <!-- TERMÉK -->
+
+       <button
+           id="product-smaller"
+           type="button">
+
+           Kisebb
+       </button>
+
+       <button
+           id="product-larger"
+           type="button">
+
+           Nagyobb
+       </button>
+
+       <button
+           id="product-rotate"
+           type="button">
+
+           Forgatás
+       </button>
+
+       <button
+           id="product-delete"
+           type="button">
+
+           Törlés
+       </button>
+
+
+       <span class="control-separator"></span>
+
+
+       <!-- AJTÓ / ABLAK -->
+
+       <!-- FAL KIVÁLASZTÁSA -->
+
+<select
+   id="feature-wall"
+   aria-label="Fal kiválasztása">
+
+   <option value="back">
+       Hátsó fal
+   </option>
+
+   <option value="left">
+       Bal fal
+   </option>
+
+   <option value="right">
+       Jobb fal
+   </option>
+
+</select>
+
+
+<label
+   style="
+       display: flex;
+       align-items: center;
+       gap: 6px;
+       color: #315f55;
+       font-size: 13px;
+       font-weight: 600;
+   ">
+
+   Fal színe
+
+   <input
+       id="three-d-wall-color"
+       type="color"
+       value="#eee8df"
+       aria-label="3D fal színe">
+
+</label>
+
+       <button
+           id="add-door"
+           type="button">
+
+           🚪 Ajtó
+       </button>
+
+
+       <button
+           id="add-window"
+           type="button">
+
+           🪟 Ablak
+       </button>
+
+
+       <button
+           id="remove-door"
+           type="button">
+
+           Ajtó törlés
+       </button>
+
+
+       <button
+           id="remove-window"
+           type="button">
+
+           Ablak törlés
+       </button>
+
+   </div>
+
+
+   <!-- =====================================================
+        3D SZOBA
+   ====================================================== -->
 
    <div
        id="three-d-room"
        aria-label="Háromdimenziós babaszoba">
-</div>
 
-   <div class="room-help">
-       Forgatás: húzd az egeret · Nagyítás: görgő
    </div>
 
+
+   <div class="room-help">
+       Forgatás: húzd az üres területet ·
+       Termékmozgatás: húzd a terméket ·
+       Nagyítás: görgő
+   </div>
+
+
    <script type="module">
+
        import * as THREE from "three";
 
        import {
            OrbitControls
-       } from "three/addons/controls/OrbitControls.js";
+       } from
+           "three/addons/controls/OrbitControls.js";
 
+
+       /* =====================================================
+          HTML ELEMEK
+       ====================================================== */
 
        const container =
-           document.getElementById("three-d-room");
+           document.getElementById(
+               "three-d-room"
+           );
 
 
-       /*
-        * JELENET
-        */
+       const smallerButton =
+           document.getElementById(
+               "product-smaller"
+           );
 
-       const scene = new THREE.Scene();
+
+       const largerButton =
+           document.getElementById(
+               "product-larger"
+           );
+
+
+       const rotateButton =
+           document.getElementById(
+               "product-rotate"
+           );
+
+
+       const deleteProductButton =
+           document.getElementById(
+               "product-delete"
+           );
+
+
+       const wallSelect =
+           document.getElementById(
+               "feature-wall"
+           );
+
+
+       const addDoorButton =
+           document.getElementById(
+               "add-door"
+           );
+
+
+       const addWindowButton =
+           document.getElementById(
+               "add-window"
+           );
+
+
+       const removeDoorButton =
+           document.getElementById(
+               "remove-door"
+           );
+
+
+       const removeWindowButton =
+           document.getElementById(
+               "remove-window"
+           );
+
+
+const wallColorInput =
+   document.getElementById(
+       "three-d-wall-color"
+   );
+
+
+       /* =====================================================
+          JELENET
+       ====================================================== */
+
+       const scene =
+           new THREE.Scene();
+
 
        scene.background =
-           new THREE.Color(0xf5f2ec);
+           new THREE.Color(
+               0xf5f2ec
+           );
 
 
-       /*
-        * KAMERA
-        */
+       /* =====================================================
+          SZOBAMÉRETEK
+       ====================================================== */
+
+       const roomWidth = 6;
+       const roomHeight = 3.2;
+       const roomDepth = 5;
+
+
+       /* =====================================================
+          TERMÉKCSOPORT
+       ====================================================== */
+
+       const productGroup =
+           new THREE.Group();
+
+
+       productGroup.name =
+           "minique-products";
+
+
+       scene.add(
+           productGroup
+       );
+
+
+       let productCounter =
+           0;
+
+
+       let selectedProduct =
+           null;
+
+
+       let selectionHelper =
+           null;
+
+
+       /* =====================================================
+          AJTÓ / ABLAK ÁLLAPOT
+       ====================================================== */
+
+       let doorGroup =
+           null;
+
+
+       let windowGroup =
+           null;
+
+
+       /* =====================================================
+          TERMÉKHÚZÁS
+       ====================================================== */
+
+       let isDraggingProduct =
+           false;
+
+        /* =====================================================
+  AJTÓ / ABLAK MOZGATÁS ÁLLAPOTA
+====================================================== */
+
+let selectedFeature =
+   null;
+
+let isDraggingFeature =
+   false;
+
+const featureIntersection =
+   new THREE.Vector3();
+
+const featureDragPlane =
+   new THREE.Plane();
+
+
+       let dragOffsetX =
+           0;
+
+
+       let dragOffsetZ =
+           0;
+
+
+       const raycaster =
+           new THREE.Raycaster();
+
+
+       const pointer =
+           new THREE.Vector2();
+
+
+       const floorDragPlane =
+           new THREE.Plane(
+               new THREE.Vector3(
+                   0,
+                   1,
+                   0
+               ),
+               0
+           );
+
+
+       const dragIntersection =
+           new THREE.Vector3();
+
+
+       /* =====================================================
+          KAMERA
+       ====================================================== */
 
        const camera =
            new THREE.PerspectiveCamera(
                45,
-               window.innerWidth / window.innerHeight,
+               window.innerWidth /
+                   window.innerHeight,
                0.1,
                100
            );
 
-       camera.position.set(7, 4.8, 8);
+
+       camera.position.set(
+           7,
+           4.8,
+           8
+       );
 
 
-       /*
-        * MEGJELENÍTŐ
-        */
+       /* =====================================================
+          RENDERER
+       ====================================================== */
 
        const renderer =
            new THREE.WebGLRenderer({
-               antialias: true
+               antialias: true,
+               preserveDrawingBuffer: true
            });
 
+
        renderer.setPixelRatio(
-           Math.min(window.devicePixelRatio, 2)
+           Math.min(
+               window.devicePixelRatio,
+               2
+           )
        );
+
 
        renderer.setSize(
            window.innerWidth,
            window.innerHeight
        );
 
-       renderer.shadowMap.enabled = true;
+
+       renderer.shadowMap.enabled =
+           true;
+
 
        renderer.shadowMap.type =
            THREE.PCFSoftShadowMap;
 
+
        renderer.outputColorSpace =
            THREE.SRGBColorSpace;
+
+
+       renderer.domElement.style.touchAction =
+           "none";
+
 
        container.appendChild(
            renderer.domElement
        );
 
 
-       /*
-        * KAMERAVEZÉRLÉS
-        */
+       /* =====================================================
+          KAMERAVEZÉRLÉS
+       ====================================================== */
 
        const controls =
            new OrbitControls(
@@ -174,102 +622,131 @@
                renderer.domElement
            );
 
-       controls.target.set(0, 1.4, -0.2);
 
-       controls.enableDamping = true;
+       controls.target.set(
+           0,
+           1.4,
+           -0.2
+       );
 
-       controls.dampingFactor = 0.06;
 
-       controls.enablePan = false;
+       controls.enableDamping =
+           true;
 
-       controls.minDistance = 5;
 
-       controls.maxDistance = 14;
+       controls.dampingFactor =
+           0.06;
+
+
+       controls.enablePan =
+           false;
+
+
+       controls.minDistance =
+           5;
+
+
+       controls.maxDistance =
+           14;
+
 
        controls.minPolarAngle =
-           THREE.MathUtils.degToRad(42);
+           THREE.MathUtils.degToRad(
+               42
+           );
+
 
        controls.maxPolarAngle =
-           THREE.MathUtils.degToRad(82);
+           THREE.MathUtils.degToRad(
+               82
+           );
+
 
        controls.update();
 
 
-       /*
-        * SZOBAMÉRETEK
-        */
-
-       const roomWidth = 6;
-       const roomHeight = 3.2;
-       const roomDepth = 5;
-
-
-       /*
-        * ANYAGOK
-        */
+       /* =====================================================
+          FAL / PADLÓ ANYAGOK
+       ====================================================== */
 
        const wallMaterial =
            new THREE.MeshStandardMaterial({
-               color: 0xeee8df,
-               roughness: 0.9,
-               metalness: 0,
-               side: THREE.DoubleSide
+
+               color:
+                   0xeee8df,
+
+               roughness:
+                   0.9,
+
+               metalness:
+                   0,
+
+               side:
+                   THREE.DoubleSide
            });
+
 
        const floorMaterial =
            new THREE.MeshStandardMaterial({
-               color: 0xc9a982,
-               roughness: 0.78,
-               metalness: 0,
-               side: THREE.DoubleSide
+
+               color:
+                   0xc9a982,
+
+               roughness:
+                   0.78,
+
+               metalness:
+                   0,
+
+               side:
+                   THREE.DoubleSide
            });
 
 
-       /*
-        * PADLÓ
-        */
-
-       const floorGeometry =
-           new THREE.PlaneGeometry(
-               roomWidth,
-               roomDepth
-           );
+       /* =====================================================
+          PADLÓ
+       ====================================================== */
 
        const floor =
            new THREE.Mesh(
-               floorGeometry,
+
+               new THREE.PlaneGeometry(
+                   roomWidth,
+                   roomDepth
+               ),
+
                floorMaterial
            );
+
 
        floor.rotation.x =
            -Math.PI / 2;
 
-       floor.position.set(
-           0,
-           0,
-           0
+
+       floor.receiveShadow =
+           true;
+
+
+       scene.add(
+           floor
        );
 
-       floor.receiveShadow = true;
 
-       scene.add(floor);
-
-
-       /*
-        * HÁTSÓ FAL
-        */
-
-       const backWallGeometry =
-           new THREE.PlaneGeometry(
-               roomWidth,
-               roomHeight
-           );
+       /* =====================================================
+          HÁTSÓ FAL
+       ====================================================== */
 
        const backWall =
            new THREE.Mesh(
-               backWallGeometry,
+
+               new THREE.PlaneGeometry(
+                   roomWidth,
+                   roomHeight
+               ),
+
                wallMaterial
            );
+
 
        backWall.position.set(
            0,
@@ -277,14 +754,19 @@
            -roomDepth / 2
        );
 
-       backWall.receiveShadow = true;
 
-       scene.add(backWall);
+       backWall.receiveShadow =
+           true;
 
 
-       /*
-        * BAL OLDALFAL
-        */
+       scene.add(
+           backWall
+       );
+
+
+       /* =====================================================
+          OLDALFALAK
+       ====================================================== */
 
        const sideWallGeometry =
            new THREE.PlaneGeometry(
@@ -292,14 +774,17 @@
                roomHeight
            );
 
+
        const leftWall =
            new THREE.Mesh(
                sideWallGeometry,
                wallMaterial
            );
 
+
        leftWall.rotation.y =
            Math.PI / 2;
+
 
        leftWall.position.set(
            -roomWidth / 2,
@@ -307,14 +792,11 @@
            0
        );
 
-       leftWall.receiveShadow = true;
 
-       scene.add(leftWall);
+       scene.add(
+           leftWall
+       );
 
-
-       /*
-        * JOBB OLDALFAL
-        */
 
        const rightWall =
            new THREE.Mesh(
@@ -322,8 +804,10 @@
                wallMaterial
            );
 
+
        rightWall.rotation.y =
            -Math.PI / 2;
+
 
        rightWall.position.set(
            roomWidth / 2,
@@ -331,20 +815,39 @@
            0
        );
 
-       rightWall.receiveShadow = true;
 
-       scene.add(rightWall);
+       scene.add(
+           rightWall
+       );
+
+       /* =====================================================
+  KÜLÖN ANYAG MINDEN FALHOZ
+====================================================== */
+
+backWall.material =
+   wallMaterial.clone();
+
+leftWall.material =
+   wallMaterial.clone();
+
+rightWall.material =
+   wallMaterial.clone();
 
 
-       /*
-        * SZEGŐLÉCEK
-        */
+       /* =====================================================
+          SZEGŐLÉCEK
+       ====================================================== */
 
        const skirtingMaterial =
            new THREE.MeshStandardMaterial({
-               color: 0xffffff,
-               roughness: 0.8
+
+               color:
+                   0xffffff,
+
+               roughness:
+                   0.8
            });
+
 
        function createSkirting(
            width,
@@ -354,30 +857,40 @@
            y,
            z
        ) {
-           const geometry =
-               new THREE.BoxGeometry(
-                   width,
-                   height,
-                   depth
-               );
 
-           const skirting =
+           const object =
                new THREE.Mesh(
-                   geometry,
+
+                   new THREE.BoxGeometry(
+                       width,
+                       height,
+                       depth
+                   ),
+
                    skirtingMaterial
                );
 
-           skirting.position.set(
+
+           object.position.set(
                x,
                y,
                z
            );
 
-           skirting.castShadow = true;
-           skirting.receiveShadow = true;
 
-           scene.add(skirting);
+           object.castShadow =
+               true;
+
+
+           object.receiveShadow =
+               true;
+
+
+           scene.add(
+               object
+           );
        }
+
 
        createSkirting(
            roomWidth,
@@ -388,6 +901,7 @@
            -roomDepth / 2 + 0.04
        );
 
+
        createSkirting(
            0.08,
            0.12,
@@ -396,6 +910,7 @@
            0.06,
            0
        );
+
 
        createSkirting(
            0.08,
@@ -407,44 +922,9 @@
        );
 
 
-       /*
-        * PRÓBABÚTOR
-        */
-
-       const furnitureMaterial =
-           new THREE.MeshStandardMaterial({
-               color: 0xd7c1a7,
-               roughness: 0.72
-           });
-
-       const furnitureGeometry =
-           new THREE.BoxGeometry(
-               1.8,
-               0.75,
-               0.85
-           );
-
-       const furniture =
-           new THREE.Mesh(
-               furnitureGeometry,
-               furnitureMaterial
-           );
-
-       furniture.position.set(
-           0,
-           0.375,
-           -1.65
-       );
-
-       furniture.castShadow = true;
-       furniture.receiveShadow = true;
-
-       scene.add(furniture);
-
-
-       /*
-        * FÉNYEK
-        */
+       /* =====================================================
+          FÉNYEK
+       ====================================================== */
 
        const hemisphereLight =
            new THREE.HemisphereLight(
@@ -453,7 +933,10 @@
                1.8
            );
 
-       scene.add(hemisphereLight);
+
+       scene.add(
+           hemisphereLight
+       );
 
 
        const mainLight =
@@ -462,56 +945,2006 @@
                2.4
            );
 
+
        mainLight.position.set(
            3,
            6,
            4
        );
 
-       mainLight.castShadow = true;
 
-       mainLight.shadow.mapSize.set(
-           2048,
-           2048
+       mainLight.castShadow =
+           true;
+
+
+       scene.add(
+           mainLight
        );
 
-       mainLight.shadow.camera.left = -7;
-       mainLight.shadow.camera.right = 7;
-       mainLight.shadow.camera.top = 7;
-       mainLight.shadow.camera.bottom = -7;
 
-       scene.add(mainLight);
+       /* =====================================================
+          AJTÓ LÉTREHOZÁSA
+       ====================================================== */
+
+       function createDoor() {
+
+           if (
+               doorGroup
+           ) {
+
+               scene.remove(
+                   doorGroup
+               );
+           }
+
+
+           doorGroup =
+               new THREE.Group();
+
+
+           doorGroup.name =
+               "three-d-door";
+
+
+           const doorMaterial =
+               new THREE.MeshStandardMaterial({
+
+                   color:
+                       0xe3d2bd,
+
+                   roughness:
+                       0.75
+               });
+
+
+           const frameMaterial =
+               new THREE.MeshStandardMaterial({
+
+                   color:
+                       0xffffff,
+
+                   roughness:
+                       0.8
+               });
+
+
+           /* AJTÓLAP */
+
+           const door =
+               new THREE.Mesh(
+
+                   new THREE.BoxGeometry(
+                       1.05,
+                       2.15,
+                       0.08
+                   ),
+
+                   doorMaterial
+               );
+
+
+           door.position.y =
+               1.075;
+
+
+           door.castShadow =
+               true;
+
+
+           doorGroup.add(
+               door
+           );
+
+
+           /* FELSŐ TOK */
+
+           const topFrame =
+               new THREE.Mesh(
+
+                   new THREE.BoxGeometry(
+                       1.2,
+                       0.08,
+                       0.12
+                   ),
+
+                   frameMaterial
+               );
+
+
+           topFrame.position.set(
+               0,
+               2.2,
+               0
+           );
+
+
+           doorGroup.add(
+               topFrame
+           );
+
+
+           /* BAL TOK */
+
+           const leftFrame =
+               new THREE.Mesh(
+
+                   new THREE.BoxGeometry(
+                       0.08,
+                       2.25,
+                       0.12
+                   ),
+
+                   frameMaterial
+               );
+
+
+           leftFrame.position.set(
+               -0.56,
+               1.125,
+               0
+           );
+
+
+           doorGroup.add(
+               leftFrame
+           );
+
+
+           /* JOBB TOK */
+
+           const rightFrame =
+               leftFrame.clone();
+
+
+           rightFrame.position.x =
+               0.56;
+
+
+           doorGroup.add(
+               rightFrame
+           );
+
+
+           /* KILINCS */
+
+           const handle =
+               new THREE.Mesh(
+
+                   new THREE.SphereGeometry(
+                       0.05,
+                       16,
+                       16
+                   ),
+
+                   new THREE.MeshStandardMaterial({
+                       color: 0x8c8175,
+                       roughness: 0.45
+                   })
+               );
+
+
+           handle.position.set(
+               0.38,
+               1.05,
+               0.08
+           );
+
+
+           doorGroup.add(
+               handle
+           );
+
+
+           scene.add(
+               doorGroup
+           );
+
+
+           setFeatureWall(
+               doorGroup,
+               wallSelect.value,
+               "door"
+           );
+       }
+
+
+       /* =====================================================
+          ABLAK LÉTREHOZÁSA
+       ====================================================== */
+
+       function createWindow() {
+
+           if (
+               windowGroup
+           ) {
+
+               scene.remove(
+                   windowGroup
+               );
+           }
+
+
+           windowGroup =
+               new THREE.Group();
+
+
+           windowGroup.name =
+               "three-d-window";
+
+
+           const glassMaterial =
+               new THREE.MeshStandardMaterial({
+
+                   color:
+                       0xbad9df,
+
+                   transparent:
+                       true,
+
+                   opacity:
+                       0.48,
+
+                   roughness:
+                       0.2,
+
+                   side:
+                       THREE.DoubleSide
+               });
+
+
+           const frameMaterial =
+               new THREE.MeshStandardMaterial({
+
+                   color:
+                       0xffffff,
+
+                   roughness:
+                       0.78
+               });
+
+
+           /* ÜVEG */
+
+           const glass =
+               new THREE.Mesh(
+
+                   new THREE.BoxGeometry(
+                       1.65,
+                       1.15,
+                       0.035
+                   ),
+
+                   glassMaterial
+               );
+
+
+           windowGroup.add(
+               glass
+           );
+
+
+           function addFrame(
+               width,
+               height,
+               x,
+               y
+           ) {
+
+               const frame =
+                   new THREE.Mesh(
+
+                       new THREE.BoxGeometry(
+                           width,
+                           height,
+                           0.09
+                       ),
+
+                       frameMaterial
+                   );
+
+
+               frame.position.set(
+                   x,
+                   y,
+                   0
+               );
+
+
+               windowGroup.add(
+                   frame
+               );
+           }
+
+
+           addFrame(
+               1.8,
+               0.08,
+               0,
+               0.61
+           );
+
+
+           addFrame(
+               1.8,
+               0.08,
+               0,
+               -0.61
+           );
+
+
+           addFrame(
+               0.08,
+               1.3,
+               -0.86,
+               0
+           );
+
+
+           addFrame(
+               0.08,
+               1.3,
+               0.86,
+               0
+           );
+
+
+           /* KÖZÉPSŐ OSZTÓ */
+
+           addFrame(
+               0.06,
+               1.15,
+               0,
+               0
+           );
+
+
+           scene.add(
+               windowGroup
+           );
+
+
+           setFeatureWall(
+               windowGroup,
+               wallSelect.value,
+               "window"
+           );
+       }
+
+
+       /* =====================================================
+          AJTÓ / ABLAK FALRA HELYEZÉSE
+       ====================================================== */
+
+       function setFeatureWall(
+           object,
+           wall,
+           type
+       ) {
+
+           if (
+               !object
+           ) {
+
+               return;
+           }
+
+
+           object.rotation.set(
+               0,
+               0,
+               0
+           );
+
+
+           const isDoor =
+               type ===
+               "door";
+
+
+           const y =
+               isDoor
+                   ? 0
+                   : 1.85;
+
+
+           if (
+               wall ===
+               "left"
+           ) {
+
+               object.rotation.y =
+                   Math.PI / 2;
+
+
+               object.position.set(
+
+                   -roomWidth / 2 +
+                       0.06,
+
+                   y,
+
+                   isDoor
+                       ? 0.7
+                       : 0
+
+               );
+
+           } else if (
+               wall ===
+               "right"
+           ) {
+
+               object.rotation.y =
+                   -Math.PI / 2;
+
+
+               object.position.set(
+
+                   roomWidth / 2 -
+                       0.06,
+
+                   y,
+
+                   isDoor
+                       ? 0.7
+                       : 0
+
+               );
+
+           } else {
+
+               /*
+                * HÁTSÓ FAL
+                */
+
+               object.rotation.y =
+                   0;
+
+
+               object.position.set(
+
+                   isDoor
+                       ? 1.65
+                       : -1.25,
+
+                   y,
+
+                   -roomDepth / 2 +
+                       0.06
+
+               );
+           }
+
+
+           object.userData.wall =
+               wall;
+       }
+
+       /* =====================================================
+  AJTÓ / ABLAK FELISMERÉSE
+====================================================== */
+
+function getFeatureFromObject(
+   object
+) {
+
+   let current =
+       object;
+
+   while (current) {
+
+       if (
+           current === doorGroup ||
+           current === windowGroup
+       ) {
+
+           return current;
+       }
+
+       current =
+           current.parent;
+   }
+
+   return null;
+}
+
+
+/* =====================================================
+  FAL SÍKJÁNAK BEÁLLÍTÁSA MOZGATÁSHOZ
+====================================================== */
+
+function setFeatureDragPlane(
+   feature
+) {
+
+   if (!feature) {
+       return;
+   }
+
+   const wall =
+       feature.userData.wall ||
+       "back";
+
+
+   if (wall === "left") {
+
+       featureDragPlane.setFromNormalAndCoplanarPoint(
+
+           new THREE.Vector3(
+               1,
+               0,
+               0
+           ),
+
+           new THREE.Vector3(
+               -roomWidth / 2,
+               0,
+               0
+           )
+       );
+
+       return;
+   }
+
+
+   if (wall === "right") {
+
+       featureDragPlane.setFromNormalAndCoplanarPoint(
+
+           new THREE.Vector3(
+               -1,
+               0,
+               0
+           ),
+
+           new THREE.Vector3(
+               roomWidth / 2,
+               0,
+               0
+           )
+       );
+
+       return;
+   }
+
+
+   /* HÁTSÓ FAL */
+
+   featureDragPlane.setFromNormalAndCoplanarPoint(
+
+       new THREE.Vector3(
+           0,
+           0,
+           1
+       ),
+
+       new THREE.Vector3(
+           0,
+           0,
+           -roomDepth / 2
+       )
+   );
+}
+
+
+/* =====================================================
+  AJTÓ / ABLAK MOZGATÁSA A SAJÁT FALÁN
+====================================================== */
+
+function moveFeatureOnWall(
+   feature,
+   intersection
+) {
+
+   if (
+       !feature ||
+       !intersection
+   ) {
+
+       return;
+   }
+
+
+   const wall =
+       feature.userData.wall ||
+       "back";
+
+
+   const isDoor =
+       feature ===
+       doorGroup;
+
+
+   /*
+    * AJTÓ MÉRETE KB. 1,2 M
+    * ABLAK MÉRETE KB. 1,8 M
+    */
+
+   const horizontalHalfSize =
+       isDoor
+           ? 0.65
+           : 0.95;
+
+
+   /* =================================================
+      HÁTSÓ FAL
+   ================================================== */
+
+   if (
+       wall ===
+       "back"
+   ) {
+
+       feature.position.x =
+           THREE.MathUtils.clamp(
+
+               intersection.x,
+
+               -roomWidth / 2 +
+                   horizontalHalfSize,
+
+               roomWidth / 2 -
+                   horizontalHalfSize
+           );
 
 
        /*
-        * ABLAK ÁTMÉRETEZÉSE
+        * A fal síkja fix marad.
         */
 
-       window.addEventListener(
-           "resize",
-           function () {
-               camera.aspect =
-                   window.innerWidth /
-                   window.innerHeight;
+       feature.position.z =
+           -roomDepth / 2 +
+           0.06;
 
-               camera.updateProjectionMatrix();
 
-               renderer.setSize(
-                   window.innerWidth,
-                   window.innerHeight
+       if (isDoor) {
+
+           /*
+            * Az ajtó mindig a padlón marad.
+            */
+
+           feature.position.y =
+               0;
+
+       } else {
+
+           /*
+            * Ablak fel/le is mozgatható.
+            */
+
+           feature.position.y =
+               THREE.MathUtils.clamp(
+
+                   intersection.y,
+
+                   0.75,
+
+                   roomHeight -
+                       0.75
                );
+       }
+
+       return;
+   }
+
+
+   /* =================================================
+      BAL FAL
+   ================================================== */
+
+   if (
+       wall ===
+       "left"
+   ) {
+
+       feature.position.z =
+           THREE.MathUtils.clamp(
+
+               intersection.z,
+
+               -roomDepth / 2 +
+                   horizontalHalfSize,
+
+               roomDepth / 2 -
+                   horizontalHalfSize
+           );
+
+
+       feature.position.x =
+           -roomWidth / 2 +
+           0.06;
+
+
+       if (isDoor) {
+
+           feature.position.y =
+               0;
+
+       } else {
+
+           feature.position.y =
+               THREE.MathUtils.clamp(
+
+                   intersection.y,
+
+                   0.75,
+
+                   roomHeight -
+                       0.75
+               );
+       }
+
+       return;
+   }
+
+
+   /* =================================================
+      JOBB FAL
+   ================================================== */
+
+   if (
+       wall ===
+       "right"
+   ) {
+
+       feature.position.z =
+           THREE.MathUtils.clamp(
+
+               intersection.z,
+
+               -roomDepth / 2 +
+                   horizontalHalfSize,
+
+               roomDepth / 2 -
+                   horizontalHalfSize
+           );
+
+
+       feature.position.x =
+           roomWidth / 2 -
+           0.06;
+
+
+       if (isDoor) {
+
+           feature.position.y =
+               0;
+
+       } else {
+
+           feature.position.y =
+               THREE.MathUtils.clamp(
+
+                   intersection.y,
+
+                   0.75,
+
+                   roomHeight -
+                       0.75
+               );
+       }
+   }
+}
+
+
+       /* =====================================================
+          AJTÓ / ABLAK GOMBOK
+       ====================================================== */
+
+       addDoorButton.addEventListener(
+           "click",
+           function () {
+
+               createDoor();
+
+           }
+       );
+
+
+       addWindowButton.addEventListener(
+           "click",
+           function () {
+
+               createWindow();
+
+           }
+       );
+
+
+       removeDoorButton.addEventListener(
+           "click",
+           function () {
+
+               if (
+                   !doorGroup
+               ) {
+
+                   return;
+               }
+
+
+               scene.remove(
+                   doorGroup
+               );
+
+
+               doorGroup =
+                   null;
+
+           }
+       );
+
+
+       removeWindowButton.addEventListener(
+           "click",
+           function () {
+
+               if (
+                   !windowGroup
+               ) {
+
+                   return;
+               }
+
+
+               scene.remove(
+                   windowGroup
+               );
+
+
+               windowGroup =
+                   null;
+
            }
        );
 
 
        /*
-        * ANIMÁCIÓ
+        * Ha a falválasztót átállítod,
+        * a már meglévő ajtó és ablak is
+        * átkerül az új falra.
         */
 
+       wallSelect.addEventListener(
+           "change",
+           function () {
+
+               if (
+                   doorGroup
+               ) {
+
+                   setFeatureWall(
+                       doorGroup,
+                       wallSelect.value,
+                       "door"
+                   );
+               }
+
+
+               if (
+                   windowGroup
+               ) {
+
+                   setFeatureWall(
+                       windowGroup,
+                       wallSelect.value,
+                       "window"
+                   );
+               }
+
+           }
+       );
+
+
+       /* =====================================================
+          TERMÉK TEXTÚRA
+       ====================================================== */
+
+       const textureLoader =
+           new THREE.TextureLoader();
+
+        /* =====================================================
+  AKTUÁLISAN KIVÁLASZTOTT FAL
+====================================================== */
+
+function getSelectedWall() {
+
+   const wall =
+       wallSelect.value;
+
+
+   if (wall === "left") {
+       return leftWall;
+   }
+
+
+   if (wall === "right") {
+       return rightWall;
+   }
+
+
+   return backWall;
+}
+
+/* =====================================================
+  FAL SZÍNÉNEK MÓDOSÍTÁSA
+====================================================== */
+
+wallColorInput.addEventListener(
+   "input",
+   function () {
+
+       const wall =
+           getSelectedWall();
+
+
+       if (!wall) {
+           return;
+       }
+
+
+       if (wall.material.map) {
+
+           wall.material.map.dispose();
+
+           wall.material.map =
+               null;
+       }
+
+
+       wall.material.color.set(
+           wallColorInput.value
+       );
+
+
+       wall.material.needsUpdate =
+           true;
+   }
+);
+
+async function applyDecorWall(
+   product
+) {
+
+   if (
+       !product ||
+       !product.image
+   ) {
+       return;
+   }
+
+
+   const wall =
+       getSelectedWall();
+
+
+   try {
+
+       const texture =
+           await textureLoader.loadAsync(
+               product.image
+           );
+
+
+       texture.colorSpace =
+           THREE.SRGBColorSpace;
+
+
+       /*
+        * A kép fedje le a teljes falat.
+        */
+
+       texture.wrapS =
+           THREE.ClampToEdgeWrapping;
+
+       texture.wrapT =
+           THREE.ClampToEdgeWrapping;
+
+
+       if (
+           wall.material.map
+       ) {
+
+           wall.material.map.dispose();
+       }
+
+
+       wall.material.map =
+           texture;
+
+
+       wall.material.color.set(
+           0xffffff
+       );
+
+
+       wall.material.needsUpdate =
+           true;
+
+
+   } catch (error) {
+
+       console.error(
+           "A dekorfal nem tölthető be:",
+           product.image,
+           error
+       );
+   }
+}
+
+
+       /* =====================================================
+          TERMÉK HOZZÁADÁSA
+       ====================================================== */
+
+       async function addProductToThreeD(
+           product
+       ) {
+
+           if (
+               !product ||
+               !product.image
+           ) {
+
+               return;
+           }
+
+
+           try {
+
+               const texture =
+                   await textureLoader.loadAsync(
+                       product.image
+                   );
+
+
+               texture.colorSpace =
+                   THREE.SRGBColorSpace;
+
+
+               const imageWidth =
+                   texture.image.naturalWidth ||
+                   texture.image.width ||
+                   1;
+
+
+               const imageHeight =
+                   texture.image.naturalHeight ||
+                   texture.image.height ||
+                   1;
+
+
+               const ratio =
+                   imageHeight /
+                   imageWidth;
+
+
+               let productWidth =
+                   1.25;
+
+
+               if (
+                   product.realWidth &&
+                   Number(
+                       product.realWidth
+                   ) > 0
+               ) {
+
+                   productWidth =
+                       THREE.MathUtils.clamp(
+
+                           Number(
+                               product.realWidth
+                           ) / 70,
+
+                           0.65,
+
+                           2.2
+                       );
+               }
+
+
+               const productHeight =
+                   Math.max(
+
+                       productWidth *
+                           ratio,
+
+                       0.25
+                   );
+
+
+               const productDepth =
+                   THREE.MathUtils.clamp(
+
+                       productWidth *
+                           0.32,
+
+                       0.18,
+
+                       0.65
+                   );
+
+
+               const geometry =
+                   new THREE.BoxGeometry(
+
+                       productWidth,
+
+                       productHeight,
+
+                       productDepth
+                   );
+
+
+               const frontMaterial =
+                   new THREE.MeshBasicMaterial({
+
+                       map:
+                           texture,
+
+                       transparent:
+                           true,
+
+                       alphaTest:
+                           0.02
+                   });
+
+
+               const sideMaterial =
+                   new THREE.MeshStandardMaterial({
+
+                       color:
+                           0xd8d0c7,
+
+                       roughness:
+                           0.85
+                   });
+
+
+               const materials = [
+
+                   sideMaterial,
+                   sideMaterial,
+                   sideMaterial,
+                   sideMaterial,
+                   frontMaterial,
+                   sideMaterial
+
+               ];
+
+
+               const object =
+                   new THREE.Mesh(
+                       geometry,
+                       materials
+                   );
+
+
+               object.userData.product =
+                   product;
+
+
+               object.userData.baseWidth =
+                   productWidth;
+
+
+               object.userData.baseHeight =
+                   productHeight;
+
+
+               object.userData.baseDepth =
+                   productDepth;
+
+
+               const column =
+                   productCounter %
+                   3;
+
+
+               const row =
+                   Math.floor(
+                       productCounter /
+                       3
+                   ) %
+                   3;
+
+
+               object.position.set(
+
+                   (
+                       column -
+                       1
+                   ) *
+                   0.75,
+
+                   productHeight /
+                       2,
+
+                   0.8 -
+                       row *
+                       0.5
+               );
+
+
+               const instanceId =
+                   "3d-" +
+                   Date.now() +
+                   "-" +
+                   Math.random()
+                       .toString(36)
+                       .slice(2);
+
+
+               object.userData.instanceId =
+                   instanceId;
+
+
+               productGroup.add(
+                   object
+               );
+
+
+               selectProduct(
+                   object
+               );
+
+
+               window.parent.postMessage(
+                   {
+
+                       type:
+                           "MINIQUE_3D_PRODUCT_ADDED",
+
+                       instanceId:
+                           instanceId,
+
+                       product:
+                           product
+
+                   },
+
+                   window.location.origin
+               );
+
+
+               productCounter +=
+                   1;
+
+           } catch (error) {
+
+               console.error(
+                   "3D termékhiba:",
+                   error
+               );
+           }
+       }
+
+
+       /* =====================================================
+          KIJELÖLÉS
+       ====================================================== */
+
+       function selectProduct(
+           object
+       ) {
+
+           selectedProduct =
+               object;
+
+
+           if (
+               selectionHelper
+           ) {
+
+               scene.remove(
+                   selectionHelper
+               );
+
+
+               selectionHelper =
+                   null;
+           }
+
+
+           if (
+               !selectedProduct
+           ) {
+
+               return;
+           }
+
+
+           selectionHelper =
+               new THREE.BoxHelper(
+
+                   selectedProduct,
+
+                   0x315f55
+               );
+
+
+           scene.add(
+               selectionHelper
+           );
+       }
+
+
+       function updateSelectionHelper() {
+
+           if (
+               selectionHelper
+           ) {
+
+               selectionHelper.update();
+           }
+       }
+
+
+       /* =====================================================
+          POINTER
+       ====================================================== */
+
+       function updatePointer(
+           event
+       ) {
+
+           const rect =
+               renderer.domElement
+                   .getBoundingClientRect();
+
+
+           pointer.x =
+               (
+                   (
+                       event.clientX -
+                       rect.left
+                   ) /
+                   rect.width
+               ) *
+               2 -
+               1;
+
+
+           pointer.y =
+               -(
+                   (
+                       event.clientY -
+                       rect.top
+                   ) /
+                   rect.height
+               ) *
+               2 +
+               1;
+
+
+           raycaster.setFromCamera(
+               pointer,
+               camera
+           );
+       }
+
+
+      renderer.domElement.addEventListener(
+   "pointerdown",
+   function (event) {
+
+       updatePointer(
+           event
+       );
+
+
+       /* =================================================
+          1. ELŐSZÖR AJTÓ / ABLAK
+       ================================================== */
+
+       const featureObjects =
+           [];
+
+
+       if (doorGroup) {
+           featureObjects.push(
+               doorGroup
+           );
+       }
+
+
+       if (windowGroup) {
+           featureObjects.push(
+               windowGroup
+           );
+       }
+
+
+       const featureHits =
+           raycaster.intersectObjects(
+               featureObjects,
+               true
+           );
+
+
+       if (
+           featureHits.length >
+           0
+       ) {
+
+           const feature =
+               getFeatureFromObject(
+                   featureHits[0].object
+               );
+
+
+           if (feature) {
+
+               selectedFeature =
+                   feature;
+
+
+               selectProduct(
+                   null
+               );
+
+
+               setFeatureDragPlane(
+                   selectedFeature
+               );
+
+
+               isDraggingFeature =
+                   true;
+
+
+               isDraggingProduct =
+                   false;
+
+
+               controls.enabled =
+                   false;
+
+
+               renderer.domElement
+                   .setPointerCapture(
+                       event.pointerId
+                   );
+
+
+               return;
+           }
+       }
+
+
+       /* =================================================
+          2. TERMÉK
+       ================================================== */
+
+       const hits =
+           raycaster.intersectObjects(
+               productGroup.children,
+               false
+           );
+
+
+       if (
+           hits.length ===
+           0
+       ) {
+
+           selectedFeature =
+               null;
+
+
+           selectProduct(
+               null
+           );
+
+
+           return;
+       }
+
+
+       selectedFeature =
+           null;
+
+
+       const object =
+           hits[0].object;
+
+
+       selectProduct(
+           object
+       );
+
+
+       if (
+           raycaster.ray.intersectPlane(
+               floorDragPlane,
+               dragIntersection
+           )
+       ) {
+
+           dragOffsetX =
+               object.position.x -
+               dragIntersection.x;
+
+
+           dragOffsetZ =
+               object.position.z -
+               dragIntersection.z;
+       }
+
+
+       isDraggingProduct =
+           true;
+
+
+       isDraggingFeature =
+           false;
+
+
+       controls.enabled =
+           false;
+
+
+       renderer.domElement
+           .setPointerCapture(
+               event.pointerId
+           );
+
+   }
+);
+
+     renderer.domElement.addEventListener(
+   "pointermove",
+   function (event) {
+
+       updatePointer(
+           event
+       );
+
+
+       /* =================================================
+          AJTÓ / ABLAK MOZGATÁSA
+       ================================================== */
+
+       if (
+           isDraggingFeature &&
+           selectedFeature
+       ) {
+
+           if (
+               raycaster.ray.intersectPlane(
+
+                   featureDragPlane,
+
+                   featureIntersection
+               )
+           ) {
+
+               moveFeatureOnWall(
+
+                   selectedFeature,
+
+                   featureIntersection
+               );
+           }
+
+
+           return;
+       }
+
+
+       /* =================================================
+          TERMÉK MOZGATÁSA
+       ================================================== */
+
+       if (
+           !isDraggingProduct ||
+           !selectedProduct
+       ) {
+
+           return;
+       }
+
+
+       if (
+           !raycaster.ray.intersectPlane(
+               floorDragPlane,
+               dragIntersection
+           )
+       ) {
+
+           return;
+       }
+
+
+       const halfWidth =
+           selectedProduct
+               .userData
+               .baseWidth *
+           selectedProduct
+               .scale
+               .x /
+           2;
+
+
+       selectedProduct.position.x =
+           THREE.MathUtils.clamp(
+
+               dragIntersection.x +
+                   dragOffsetX,
+
+               -roomWidth / 2 +
+                   halfWidth,
+
+               roomWidth / 2 -
+                   halfWidth
+           );
+
+
+       selectedProduct.position.z =
+           THREE.MathUtils.clamp(
+
+               dragIntersection.z +
+                   dragOffsetZ,
+
+               -roomDepth / 2 +
+                   0.15,
+
+               roomDepth / 2 -
+                   0.15
+           );
+
+
+       updateSelectionHelper();
+
+   }
+);
+
+      function stopDragging(
+   event
+) {
+
+   isDraggingProduct =
+       false;
+
+   isDraggingFeature =
+       false;
+
+
+   controls.enabled =
+       true;
+
+
+   if (
+       renderer.domElement
+           .hasPointerCapture &&
+       renderer.domElement
+           .hasPointerCapture(
+               event.pointerId
+           )
+   ) {
+
+       renderer.domElement
+           .releasePointerCapture(
+               event.pointerId
+           );
+   }
+}
+
+
+       renderer.domElement.addEventListener(
+           "pointerup",
+           stopDragging
+       );
+
+
+       renderer.domElement.addEventListener(
+           "pointercancel",
+           stopDragging
+       );
+
+
+       /* =====================================================
+          TERMÉKGOMBOK
+       ====================================================== */
+
+       smallerButton.addEventListener(
+           "click",
+           function () {
+
+               if (
+                   !selectedProduct
+               ) {
+
+                   return;
+               }
+
+
+               selectedProduct.scale
+                   .multiplyScalar(
+                       0.9
+                   );
+
+
+               keepSelectedProductOnFloor();
+
+               updateSelectionHelper();
+
+           }
+       );
+
+
+       largerButton.addEventListener(
+           "click",
+           function () {
+
+               if (
+                   !selectedProduct
+               ) {
+
+                   return;
+               }
+
+
+               selectedProduct.scale
+                   .multiplyScalar(
+                       1.1
+                   );
+
+
+               keepSelectedProductOnFloor();
+
+               updateSelectionHelper();
+
+           }
+       );
+
+
+       rotateButton.addEventListener(
+           "click",
+           function () {
+
+               if (
+                   !selectedProduct
+               ) {
+
+                   return;
+               }
+
+
+               selectedProduct.rotation.y +=
+                   THREE.MathUtils.degToRad(
+                       15
+                   );
+
+
+               updateSelectionHelper();
+
+           }
+       );
+
+
+       deleteProductButton.addEventListener(
+           "click",
+           function () {
+
+               if (
+                   !selectedProduct
+               ) {
+
+                   return;
+               }
+
+
+               const object =
+                   selectedProduct;
+
+
+               const instanceId =
+                   object.userData
+                       .instanceId;
+
+
+               selectProduct(
+                   null
+               );
+
+
+               productGroup.remove(
+                   object
+               );
+
+
+               object.geometry
+                   ?.dispose();
+
+
+               if (
+                   Array.isArray(
+                       object.material
+                   )
+               ) {
+
+                   const handled =
+                       new Set();
+
+
+                   object.material.forEach(
+                       function (material) {
+
+                           if (
+                               !material ||
+                               handled.has(
+                                   material
+                               )
+                           ) {
+
+                               return;
+                           }
+
+
+                           handled.add(
+                               material
+                           );
+
+
+                           material.map
+                               ?.dispose();
+
+
+                           material.dispose();
+
+                       }
+                   );
+
+               }
+
+
+               window.parent.postMessage(
+                   {
+
+                       type:
+                           "MINIQUE_3D_PRODUCT_REMOVED",
+
+                       instanceId:
+                           instanceId
+
+                   },
+
+                   window.location.origin
+               );
+
+           }
+       );
+
+
+       function keepSelectedProductOnFloor() {
+
+           if (
+               !selectedProduct
+           ) {
+
+               return;
+           }
+
+
+           selectedProduct.position.y =
+
+               (
+                   selectedProduct
+                       .userData
+                       .baseHeight *
+
+                   selectedProduct
+                       .scale
+                       .y
+               ) /
+               2;
+       }
+
+       /* =====================================================
+  8. ÜZENETEK A tervezo.html-BŐL
+====================================================== */
+
+window.addEventListener(
+   "message",
+   function (event) {
+
+       if (
+           event.origin !==
+           window.location.origin
+       ) {
+           return;
+       }
+
+
+       const data =
+           event.data;
+
+
+       if (
+           !data ||
+           typeof data !==
+           "object"
+       ) {
+           return;
+       }
+
+
+       /* =============================================
+          DEKORFAL
+       ============================================== */
+
+       if (
+           data.type ===
+           "MINIQUE_APPLY_3D_WALL"
+       ) {
+
+           applyDecorWall(
+               data.product
+           );
+
+           return;
+       }
+
+
+       /* =============================================
+          TERMÉK
+       ============================================== */
+
+       if (
+           data.type ===
+           "MINIQUE_ADD_PRODUCT"
+       ) {
+
+           addProductToThreeD(
+               data.product
+           );
+
+           return;
+       }
+
+   }
+);
+
+       /* =====================================================
+          RESIZE
+       ====================================================== */
+
+       window.addEventListener(
+           "resize",
+           function () {
+
+               camera.aspect =
+                   window.innerWidth /
+                   window.innerHeight;
+
+
+               camera.updateProjectionMatrix();
+
+
+               renderer.setSize(
+                   window.innerWidth,
+                   window.innerHeight
+               );
+
+           }
+       );
+
+
+       /* =====================================================
+          ANIMÁCIÓ
+       ====================================================== */
+
        function animate() {
-           requestAnimationFrame(animate);
+
+           requestAnimationFrame(
+               animate
+           );
+
 
            controls.update();
+
 
            renderer.render(
                scene,
@@ -519,7 +2952,9 @@
            );
        }
 
+
        animate();
+
    </script>
 
 </body>

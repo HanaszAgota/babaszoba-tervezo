@@ -12,18 +12,6 @@
     "active": true
   },
   {
-    "id": "chairs-fotel-churros-feher",
-    "name": "Fotel Churros Feher",
-    "category": "chairs",
-    "categoryName": "Fotelek és ülőkék",
-    "image": "images/chairs/fotel-churros-feher.png",
-    "price": 0,
-    "realWidth": 60,
-    "defaultWidth": 180,
-    "order": 2,
-    "active": true
-  },
-  {
     "id": "chairs-fotel-churros-rozsa",
     "name": "Fotel Churros Rozsa",
     "category": "chairs",
@@ -32,7 +20,7 @@
     "price": 0,
     "realWidth": 60,
     "defaultWidth": 180,
-    "order": 3,
+    "order": 2,
     "active": true
   },
   {
@@ -44,7 +32,7 @@
     "price": 0,
     "realWidth": 60,
     "defaultWidth": 180,
-    "order": 4,
+    "order": 3,
     "active": true
   },
   {
@@ -56,7 +44,7 @@
     "price": 0,
     "realWidth": 60,
     "defaultWidth": 180,
-    "order": 5,
+    "order": 4,
     "active": true
   },
   {
@@ -68,7 +56,7 @@
     "price": 0,
     "realWidth": 60,
     "defaultWidth": 180,
-    "order": 6,
+    "order": 5,
     "active": true
   },
   {
@@ -80,19 +68,7 @@
     "price": 0,
     "realWidth": 60,
     "defaultWidth": 180,
-    "order": 7,
-    "active": true
-  },
-  {
-    "id": "chairs-fotel-maci-bezs",
-    "name": "Fotel Maci Bezs",
-    "category": "chairs",
-    "categoryName": "Fotelek és ülőkék",
-    "image": "images/chairs/fotel-maci-bezs.png",
-    "price": 0,
-    "realWidth": 60,
-    "defaultWidth": 180,
-    "order": 8,
+    "order": 6,
     "active": true
   },
   {
@@ -104,7 +80,7 @@
     "price": 0,
     "realWidth": 60,
     "defaultWidth": 180,
-    "order": 9,
+    "order": 7,
     "active": true
   },
   {
@@ -116,7 +92,7 @@
     "price": 0,
     "realWidth": 60,
     "defaultWidth": 180,
-    "order": 10,
+    "order": 8,
     "active": true
   },
   {
@@ -128,7 +104,7 @@
     "price": 0,
     "realWidth": 60,
     "defaultWidth": 180,
-    "order": 11,
+    "order": 9,
     "active": true
   },
   {
@@ -140,19 +116,7 @@
     "price": 0,
     "realWidth": 60,
     "defaultWidth": 180,
-    "order": 12,
-    "active": true
-  },
-  {
-    "id": "chairs-maci-fote-kord-feher",
-    "name": "Maci Fote Kord Feher",
-    "category": "chairs",
-    "categoryName": "Fotelek és ülőkék",
-    "image": "images/chairs/maci-fote-kord-feher.png",
-    "price": 0,
-    "realWidth": 60,
-    "defaultWidth": 180,
-    "order": 13,
+    "order": 10,
     "active": true
   },
   {
@@ -164,7 +128,7 @@
     "price": 0,
     "realWidth": 60,
     "defaultWidth": 180,
-    "order": 14,
+    "order": 11,
     "active": true
   },
   {
@@ -176,7 +140,7 @@
     "price": 0,
     "realWidth": 60,
     "defaultWidth": 180,
-    "order": 15,
+    "order": 12,
     "active": true
   },
   {
@@ -188,19 +152,19 @@
     "price": 0,
     "realWidth": 60,
     "defaultWidth": 180,
-    "order": 16,
+    "order": 13,
     "active": true
   },
   {
-    "id": "chairs-maci-fotel-kord-kek",
-    "name": "Maci Fotel Kord Kek",
+    "id": "chairs-maci-fotel-kord-feher",
+    "name": "Maci Fotel Kord Feher",
     "category": "chairs",
     "categoryName": "Fotelek és ülőkék",
-    "image": "images/chairs/maci-fotel-kord-kek.png",
+    "image": "images/chairs/maci-fotel-kord-feher.png",
     "price": 0,
     "realWidth": 60,
     "defaultWidth": 180,
-    "order": 17,
+    "order": 14,
     "active": true
   },
   {
@@ -208,11 +172,11 @@
     "name": "Maci Fotel Kord Rozsa",
     "category": "chairs",
     "categoryName": "Fotelek és ülőkék",
-    "image": "images/chairs/maci.fotel-kord-rozsa.png",
+    "image": "images/chairs/maci-fotel-kord-rozsa.png",
     "price": 0,
     "realWidth": 60,
     "defaultWidth": 180,
-    "order": 18,
+    "order": 15,
     "active": true
   },
   {
@@ -224,19 +188,7 @@
     "price": 0,
     "realWidth": 60,
     "defaultWidth": 180,
-    "order": 19,
-    "active": true
-  },
-  {
-    "id": "chairs-puff-kicsi-kord-bezs",
-    "name": "Puff Kicsi Kord Bezs",
-    "category": "chairs",
-    "categoryName": "Fotelek és ülőkék",
-    "image": "images/chairs/puff-kicsi-kord-bezs.png",
-    "price": 0,
-    "realWidth": 60,
-    "defaultWidth": 180,
-    "order": 20,
+    "order": 16,
     "active": true
   },
   {
@@ -248,19 +200,7 @@
     "price": 0,
     "realWidth": 60,
     "defaultWidth": 180,
-    "order": 21,
-    "active": true
-  },
-  {
-    "id": "chairs-puff-nagy-kord-barack",
-    "name": "Puff Nagy Kord Barack",
-    "category": "chairs",
-    "categoryName": "Fotelek és ülőkék",
-    "image": "images/chairs/puff-nagy-kord-barack.png",
-    "price": 0,
-    "realWidth": 60,
-    "defaultWidth": 180,
-    "order": 22,
+    "order": 17,
     "active": true
   },
   {
@@ -272,7 +212,7 @@
     "price": 0,
     "realWidth": 60,
     "defaultWidth": 180,
-    "order": 23,
+    "order": 18,
     "active": true
   },
   {
@@ -284,43 +224,19 @@
     "price": 0,
     "realWidth": 60,
     "defaultWidth": 180,
-    "order": 24,
+    "order": 19,
     "active": true
   },
   {
-    "id": "decor-csillag-parna-bezs",
-    "name": "Csillag Parna Bezs",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/csillag-parna-bezs.png",
+    "id": "chairs-puff-nagy-kozd-barack",
+    "name": "Puff Nagy Kozd Barack",
+    "category": "chairs",
+    "categoryName": "Fotelek és ülőkék",
+    "image": "images/chairs/puff-nagy-kozd-barack.png",
     "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 1,
-    "active": true
-  },
-  {
-    "id": "decor-csillag-parna-sotetbezs",
-    "name": "Csillag Parna Sotetbezs",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/csillag-parna-sotetbezs.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 2,
-    "active": true
-  },
-  {
-    "id": "decor-csomo-parna-babakek",
-    "name": "Csomo Parna Babakek",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/csomo-parna-babakek.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 3,
+    "realWidth": 60,
+    "defaultWidth": 180,
+    "order": 20,
     "active": true
   },
   {
@@ -332,7 +248,19 @@
     "price": 0,
     "realWidth": 50,
     "defaultWidth": 140,
-    "order": 4,
+    "order": 1,
+    "active": true
+  },
+  {
+    "id": "decor-csomo-parna-malyva",
+    "name": "Csomo Parna Malyva",
+    "category": "decor",
+    "categoryName": "Dekoráció",
+    "image": "images/decor/csomo-parna-malyva.png",
+    "price": 0,
+    "realWidth": 50,
+    "defaultWidth": 140,
+    "order": 2,
     "active": true
   },
   {
@@ -344,7 +272,7 @@
     "price": 0,
     "realWidth": 50,
     "defaultWidth": 140,
-    "order": 5,
+    "order": 3,
     "active": true
   },
   {
@@ -356,19 +284,7 @@
     "price": 0,
     "realWidth": 50,
     "defaultWidth": 140,
-    "order": 6,
-    "active": true
-  },
-  {
-    "id": "decor-csomo-parna-sotetszurke",
-    "name": "Csomo Parna Sotetszurke",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/csomo-parna-sotetszurke.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 7,
+    "order": 4,
     "active": true
   },
   {
@@ -380,55 +296,7 @@
     "price": 0,
     "realWidth": 50,
     "defaultWidth": 140,
-    "order": 8,
-    "active": true
-  },
-  {
-    "id": "decor-csomo-parna-szurkepng",
-    "name": "Csomo Parna Szurkepng",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/csomo.parna.szurkepng.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 9,
-    "active": true
-  },
-  {
-    "id": "decor-fonott-racsvedo-bezs",
-    "name": "Fonott Racsvedo Bezs",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/fonott-racsvedo-bezs.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 10,
-    "active": true
-  },
-  {
-    "id": "decor-fonott-racsvedo-rozsa",
-    "name": "Fonott Racsvedo Rozsa",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/fonott-racsvedo-rozsa.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 11,
-    "active": true
-  },
-  {
-    "id": "decor-fonott-racsvedo-szurke",
-    "name": "Fonott Racsvedo Szurke",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/fonott-racsvedo-szurke.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 12,
+    "order": 5,
     "active": true
   },
   {
@@ -440,7 +308,7 @@
     "price": 0,
     "realWidth": 50,
     "defaultWidth": 140,
-    "order": 13,
+    "order": 6,
     "active": true
   },
   {
@@ -452,19 +320,7 @@
     "price": 0,
     "realWidth": 50,
     "defaultWidth": 140,
-    "order": 14,
-    "active": true
-  },
-  {
-    "id": "decor-holegballon-rozsa",
-    "name": "Holegballon Rozsa",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/holegballon-rozsa.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 15,
+    "order": 7,
     "active": true
   },
   {
@@ -476,43 +332,7 @@
     "price": 0,
     "realWidth": 50,
     "defaultWidth": 140,
-    "order": 16,
-    "active": true
-  },
-  {
-    "id": "decor-img-1464",
-    "name": "IMG 1464",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/IMG_1464.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 17,
-    "active": true
-  },
-  {
-    "id": "decor-img-1467",
-    "name": "IMG 1467",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/IMG_1467.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 18,
-    "active": true
-  },
-  {
-    "id": "decor-labdamedence-menta",
-    "name": "Labdamedence Menta",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/labdamedence-menta.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 19,
+    "order": 8,
     "active": true
   },
   {
@@ -520,11 +340,11 @@
     "name": "Lufi Barna",
     "category": "decor",
     "categoryName": "Dekoráció",
-    "image": "images/decor/lufi_barna.png",
+    "image": "images/decor/lufi-barna.png",
     "price": 0,
     "realWidth": 50,
     "defaultWidth": 140,
-    "order": 20,
+    "order": 9,
     "active": true
   },
   {
@@ -536,7 +356,7 @@
     "price": 0,
     "realWidth": 50,
     "defaultWidth": 140,
-    "order": 21,
+    "order": 10,
     "active": true
   },
   {
@@ -548,31 +368,7 @@
     "price": 0,
     "realWidth": 50,
     "defaultWidth": 140,
-    "order": 22,
-    "active": true
-  },
-  {
-    "id": "decor-lufi-parna-bezs",
-    "name": "Lufi Parna Bezs",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/lufi-parna-bezs.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 23,
-    "active": true
-  },
-  {
-    "id": "decor-lufi-parna-sotetbezs",
-    "name": "Lufi Parna Sotetbezs",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/lufi-parna-sotetbezs.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 24,
+    "order": 11,
     "active": true
   },
   {
@@ -584,7 +380,7 @@
     "price": 0,
     "realWidth": 50,
     "defaultWidth": 140,
-    "order": 25,
+    "order": 12,
     "active": true
   },
   {
@@ -596,19 +392,7 @@
     "price": 0,
     "realWidth": 50,
     "defaultWidth": 140,
-    "order": 26,
-    "active": true
-  },
-  {
-    "id": "decor-lufi-szurke",
-    "name": "Lufi Szurke",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/lufi-szurke.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 27,
+    "order": 13,
     "active": true
   },
   {
@@ -620,267 +404,63 @@
     "price": 0,
     "realWidth": 50,
     "defaultWidth": 140,
-    "order": 28,
+    "order": 14,
     "active": true
   },
   {
-    "id": "decor-lufi-kek",
-    "name": "Lufi Kek",
+    "id": "decor-teddy-fonott-racsvedo-barna",
+    "name": "Teddy Fonott Racsvedo Barna",
     "category": "decor",
     "categoryName": "Dekoráció",
-    "image": "images/decor/lufi.kek.png",
+    "image": "images/decor/teddy-fonott-racsvedo-barna.png",
     "price": 0,
     "realWidth": 50,
     "defaultWidth": 140,
-    "order": 29,
+    "order": 15,
     "active": true
   },
   {
-    "id": "decor-masziszivacs-medence-barna",
-    "name": "Masziszivacs Medence Barna",
+    "id": "decor-teddy-fonott-racsvedo-bezs",
+    "name": "Teddy Fonott Racsvedo Bezs",
     "category": "decor",
     "categoryName": "Dekoráció",
-    "image": "images/decor/masziszivacs-medence-barna.png",
+    "image": "images/decor/teddy-fonott-racsvedo-bezs.png",
     "price": 0,
     "realWidth": 50,
     "defaultWidth": 140,
-    "order": 30,
+    "order": 16,
     "active": true
   },
   {
-    "id": "decor-masziszivacs-medence-szurke",
-    "name": "Masziszivacs Medence Szurke",
+    "id": "decor-teddy-fonott-racsvedo-feher",
+    "name": "Teddy Fonott Racsvedo Feher",
     "category": "decor",
     "categoryName": "Dekoráció",
-    "image": "images/decor/masziszivacs-medence-szurke.png",
+    "image": "images/decor/teddy-fonott-racsvedo-feher.png",
     "price": 0,
     "realWidth": 50,
     "defaultWidth": 140,
-    "order": 31,
+    "order": 17,
     "active": true
   },
   {
-    "id": "decor-maszoszivacs-medence-barack",
-    "name": "Maszoszivacs Medence Barack",
+    "id": "decor-teddy-fonott-racsvedo-rozsa",
+    "name": "Teddy Fonott Racsvedo Rozsa",
     "category": "decor",
     "categoryName": "Dekoráció",
-    "image": "images/decor/maszoszivacs-medence-barack.png",
+    "image": "images/decor/teddy-fonott-racsvedo-rozsa.png",
     "price": 0,
     "realWidth": 50,
     "defaultWidth": 140,
-    "order": 32,
+    "order": 18,
     "active": true
   },
   {
-    "id": "decor-maszoszivacs-medence-rozsapng",
-    "name": "Maszoszivacs Medence Rozsapng",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/maszoszivacs-medence-rozsapng.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 33,
-    "active": true
-  },
-  {
-    "id": "decor-sator-csikos-kek",
-    "name": "Sator Csikos Kek",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/sator-csikos-kek.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 34,
-    "active": true
-  },
-  {
-    "id": "decor-sator-csikos-szurke",
-    "name": "Sator Csikos Szurke",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/sator-csikos-szurke.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 35,
-    "active": true
-  },
-  {
-    "id": "decor-sator-csillag-kek",
-    "name": "Sator Csillag Kek",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/sator-csillag-kek.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 36,
-    "active": true
-  },
-  {
-    "id": "decor-sator-csillag-rozsa",
-    "name": "Sator Csillag Rozsa",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/sator-csillag-rozsa.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 37,
-    "active": true
-  },
-  {
-    "id": "decor-sator-csillag-szurke",
-    "name": "Sator Csillag Szurke",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/sator-csillag-szurke.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 38,
-    "active": true
-  },
-  {
-    "id": "decor-sator-kocka-bezs",
-    "name": "Sator Kocka Bezs",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/sator-kocka-bezs.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 39,
-    "active": true
-  },
-  {
-    "id": "decor-sator-kocka-rozsa",
-    "name": "Sator Kocka Rozsa",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/sator-kocka-rozsa.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 40,
-    "active": true
-  },
-  {
-    "id": "decor-tedy-csomo-parna-barna",
-    "name": "Tedy Csomo Parna Barna",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/tedy-csomo-parna-barna.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 41,
-    "active": true
-  },
-  {
-    "id": "decor-tedy-csomo-parna-bezs",
-    "name": "Tedy Csomo Parna Bezs",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/tedy-csomo-parna-bezs.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 42,
-    "active": true
-  },
-  {
-    "id": "decor-tedy-csomo-parna-feher",
-    "name": "Tedy Csomo Parna Feher",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/tedy-csomo-parna-feher.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 43,
-    "active": true
-  },
-  {
-    "id": "decor-tedy-csomo-parna-rozsa",
-    "name": "Tedy Csomo Parna Rozsa",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/tedy-csomo-parna-rozsa.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 44,
-    "active": true
-  },
-  {
-    "id": "decor-tedy-fonott-racsvedo-barna",
-    "name": "Tedy Fonott Racsvedo Barna",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/tedy-fonott-racsvedo-barna.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 45,
-    "active": true
-  },
-  {
-    "id": "decor-tedy-fonott-racsvedo-bezs",
-    "name": "Tedy Fonott Racsvedo Bezs",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/tedy-fonott-racsvedo-bezs.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 46,
-    "active": true
-  },
-  {
-    "id": "decor-tedy-fonott-racsvedo-feher",
-    "name": "Tedy Fonott Racsvedo Feher",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/tedy-fonott-racsvedo-feher.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 47,
-    "active": true
-  },
-  {
-    "id": "decor-tedy-fonott-racsvedo-rozsa",
-    "name": "Tedy Fonott Racsvedo Rozsa",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/tedy-fonott-racsvedo-rozsa.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 48,
-    "active": true
-  },
-  {
-    "id": "decor-tedy-fonott-racsvedo-szurke",
-    "name": "Tedy Fonott Racsvedo Szurke",
-    "category": "decor",
-    "categoryName": "Dekoráció",
-    "image": "images/decor/tedy-fonott-racsvedo-szurke.png",
-    "price": 0,
-    "realWidth": 50,
-    "defaultWidth": 140,
-    "order": 49,
-    "active": true
-  },
-  {
-    "id": "furniture-fellepo-modofiq",
-    "name": "Fellepo Modofiq",
+    "id": "furniture-fellepo-modifiq",
+    "name": "Fellepo Modifiq",
     "category": "furniture",
     "categoryName": "Bútorok",
-    "image": "images/furniture/fellepo-modofiq.png",
+    "image": "images/furniture/fellepo-modifiq.png",
     "price": 0,
     "realWidth": 90,
     "defaultWidth": 240,
@@ -900,18 +480,6 @@
     "active": true
   },
   {
-    "id": "furniture-gardrobe-magas-modofiq",
-    "name": "Gardrobe Magas Modofiq",
-    "category": "furniture",
-    "categoryName": "Bútorok",
-    "image": "images/furniture/gardrobe-magas-modofiq.png",
-    "price": 0,
-    "realWidth": 90,
-    "defaultWidth": 240,
-    "order": 3,
-    "active": true
-  },
-  {
     "id": "furniture-gardrobe-modifiq",
     "name": "Gardrobe Modifiq",
     "category": "furniture",
@@ -920,31 +488,19 @@
     "price": 0,
     "realWidth": 90,
     "defaultWidth": 240,
+    "order": 3,
+    "active": true
+  },
+  {
+    "id": "furniture-kisagy-modofiq",
+    "name": "Kisagy Modofiq",
+    "category": "furniture",
+    "categoryName": "Bútorok",
+    "image": "images/furniture/kisagy-modofiq.png",
+    "price": 0,
+    "realWidth": 90,
+    "defaultWidth": 240,
     "order": 4,
-    "active": true
-  },
-  {
-    "id": "furniture-gardrobe-modifiq2",
-    "name": "Gardrobe Modifiq2",
-    "category": "furniture",
-    "categoryName": "Bútorok",
-    "image": "images/furniture/gardrobe-modifiq2.png",
-    "price": 0,
-    "realWidth": 90,
-    "defaultWidth": 240,
-    "order": 5,
-    "active": true
-  },
-  {
-    "id": "furniture-kisagy-modifiq",
-    "name": "Kisagy Modifiq",
-    "category": "furniture",
-    "categoryName": "Bútorok",
-    "image": "images/furniture/kisagy-modifiq.png",
-    "price": 0,
-    "realWidth": 90,
-    "defaultWidth": 240,
-    "order": 6,
     "active": true
   },
   {
@@ -956,19 +512,7 @@
     "price": 0,
     "realWidth": 90,
     "defaultWidth": 240,
-    "order": 7,
-    "active": true
-  },
-  {
-    "id": "furniture-kisasztal-csuszda-modifiq",
-    "name": "Kisasztal Csuszda Modifiq",
-    "category": "furniture",
-    "categoryName": "Bútorok",
-    "image": "images/furniture/kisasztal-csuszda-modifiq.png",
-    "price": 0,
-    "realWidth": 90,
-    "defaultWidth": 240,
-    "order": 8,
+    "order": 5,
     "active": true
   },
   {
@@ -980,19 +524,7 @@
     "price": 0,
     "realWidth": 90,
     "defaultWidth": 240,
-    "order": 9,
-    "active": true
-  },
-  {
-    "id": "furniture-pelenkazo-modofiq",
-    "name": "Pelenkazo Modofiq",
-    "category": "furniture",
-    "categoryName": "Bútorok",
-    "image": "images/furniture/pelenkazo-modofiq.png",
-    "price": 0,
-    "realWidth": 90,
-    "defaultWidth": 240,
-    "order": 10,
+    "order": 6,
     "active": true
   },
   {
@@ -1004,7 +536,7 @@
     "price": 0,
     "realWidth": 90,
     "defaultWidth": 240,
-    "order": 11,
+    "order": 7,
     "active": true
   },
   {
@@ -1016,19 +548,7 @@
     "price": 0,
     "realWidth": 90,
     "defaultWidth": 240,
-    "order": 12,
-    "active": true
-  },
-  {
-    "id": "furniture-tarolo-pad-modifiq2",
-    "name": "Tarolo Pad Modifiq2",
-    "category": "furniture",
-    "categoryName": "Bútorok",
-    "image": "images/furniture/tarolo-pad-modifiq2.png",
-    "price": 0,
-    "realWidth": 90,
-    "defaultWidth": 240,
-    "order": 13,
+    "order": 8,
     "active": true
   },
   {
@@ -1040,7 +560,7 @@
     "price": 0,
     "realWidth": 90,
     "defaultWidth": 240,
-    "order": 14,
+    "order": 9,
     "active": true
   },
   {
@@ -1052,7 +572,7 @@
     "price": 0,
     "realWidth": 90,
     "defaultWidth": 240,
-    "order": 15,
+    "order": 10,
     "active": true
   },
   {
@@ -1068,18 +588,6 @@
     "active": true
   },
   {
-    "id": "montessori-montessori-egyensuly-hat-fekete",
-    "name": "Montessori Egyensuly Hat Fekete",
-    "category": "montessori",
-    "categoryName": "Montessori",
-    "image": "images/montessori/montessori-egyensuly-hat-fekete.png",
-    "price": 0,
-    "realWidth": 100,
-    "defaultWidth": 240,
-    "order": 2,
-    "active": true
-  },
-  {
     "id": "montessori-montessori-egyensuly-hat-natur",
     "name": "Montessori Egyensuly Hat Natur",
     "category": "montessori",
@@ -1088,7 +596,7 @@
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
-    "order": 3,
+    "order": 2,
     "active": true
   },
   {
@@ -1100,7 +608,7 @@
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
-    "order": 4,
+    "order": 3,
     "active": true
   },
   {
@@ -1112,7 +620,7 @@
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
-    "order": 5,
+    "order": 4,
     "active": true
   },
   {
@@ -1124,7 +632,7 @@
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
-    "order": 6,
+    "order": 5,
     "active": true
   },
   {
@@ -1136,19 +644,7 @@
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
-    "order": 7,
-    "active": true
-  },
-  {
-    "id": "montessori-montessori-egyensuly-negy-szurke",
-    "name": "Montessori Egyensuly Negy Szurke",
-    "category": "montessori",
-    "categoryName": "Montessori",
-    "image": "images/montessori/montessori-egyensuly-negy-szurke.png",
-    "price": 0,
-    "realWidth": 100,
-    "defaultWidth": 240,
-    "order": 8,
+    "order": 6,
     "active": true
   },
   {
@@ -1160,7 +656,7 @@
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
-    "order": 9,
+    "order": 7,
     "active": true
   },
   {
@@ -1172,7 +668,7 @@
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
-    "order": 10,
+    "order": 8,
     "active": true
   },
   {
@@ -1184,7 +680,7 @@
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
-    "order": 11,
+    "order": 9,
     "active": true
   },
   {
@@ -1196,7 +692,7 @@
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
-    "order": 12,
+    "order": 10,
     "active": true
   },
   {
@@ -1208,7 +704,7 @@
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
-    "order": 13,
+    "order": 11,
     "active": true
   },
   {
@@ -1220,7 +716,7 @@
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
-    "order": 14,
+    "order": 12,
     "active": true
   },
   {
@@ -1232,7 +728,7 @@
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
-    "order": 15,
+    "order": 13,
     "active": true
   },
   {
@@ -1244,7 +740,7 @@
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
-    "order": 16,
+    "order": 14,
     "active": true
   },
   {
@@ -1256,19 +752,7 @@
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
-    "order": 17,
-    "active": true
-  },
-  {
-    "id": "montessori-montessori-hinta-maszo-pallo-maszo-csuszda",
-    "name": "Montessori Hinta Maszo Pallo Maszo Csuszda",
-    "category": "montessori",
-    "categoryName": "Montessori",
-    "image": "images/montessori/montessori-hinta-maszo-pallo-maszo-csuszda.png",
-    "price": 0,
-    "realWidth": 100,
-    "defaultWidth": 240,
-    "order": 18,
+    "order": 15,
     "active": true
   },
   {
@@ -1280,67 +764,55 @@
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
+    "order": 16,
+    "active": true
+  },
+  {
+    "id": "montessori-montessori-hinta-natur",
+    "name": "Montessori Hinta Natur",
+    "category": "montessori",
+    "categoryName": "Montessori",
+    "image": "images/montessori/montessori-hinta-natur.png",
+    "price": 0,
+    "realWidth": 100,
+    "defaultWidth": 240,
+    "order": 17,
+    "active": true
+  },
+  {
+    "id": "montessori-montessori-hinta-parna-bezs",
+    "name": "Montessori Hinta Parna Bezs",
+    "category": "montessori",
+    "categoryName": "Montessori",
+    "image": "images/montessori/montessori-hinta-parna-bezs.png",
+    "price": 0,
+    "realWidth": 100,
+    "defaultWidth": 240,
+    "order": 18,
+    "active": true
+  },
+  {
+    "id": "montessori-montessori-hinta-parna-rozsa",
+    "name": "Montessori Hinta Parna Rozsa",
+    "category": "montessori",
+    "categoryName": "Montessori",
+    "image": "images/montessori/montessori-hinta-parna-rozsa.png",
+    "price": 0,
+    "realWidth": 100,
+    "defaultWidth": 240,
     "order": 19,
     "active": true
   },
   {
-    "id": "montessori-montessori-hinta-maszo-pallo-natur",
-    "name": "Montessori Hinta Maszo Pallo Natur",
+    "id": "montessori-montessori-hinta-parna-szurke",
+    "name": "Montessori Hinta Parna Szurke",
     "category": "montessori",
     "categoryName": "Montessori",
-    "image": "images/montessori/montessori-hinta-maszo-pallo-natur.png",
+    "image": "images/montessori/montessori-hinta-parna-szurke.png",
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
     "order": 20,
-    "active": true
-  },
-  {
-    "id": "montessori-montessori-hinta-maszo-pallo-parna-bezs",
-    "name": "Montessori Hinta Maszo Pallo Parna Bezs",
-    "category": "montessori",
-    "categoryName": "Montessori",
-    "image": "images/montessori/montessori-hinta-maszo-pallo-parna-bezs.png",
-    "price": 0,
-    "realWidth": 100,
-    "defaultWidth": 240,
-    "order": 21,
-    "active": true
-  },
-  {
-    "id": "montessori-montessori-hinta-maszo-pallo-parna-rozsa",
-    "name": "Montessori Hinta Maszo Pallo Parna Rozsa",
-    "category": "montessori",
-    "categoryName": "Montessori",
-    "image": "images/montessori/montessori-hinta-maszo-pallo-parna-rozsa.png",
-    "price": 0,
-    "realWidth": 100,
-    "defaultWidth": 240,
-    "order": 22,
-    "active": true
-  },
-  {
-    "id": "montessori-montessori-hinta-maszo-pallo-parna-szurke",
-    "name": "Montessori Hinta Maszo Pallo Parna Szurke",
-    "category": "montessori",
-    "categoryName": "Montessori",
-    "image": "images/montessori/montessori-hinta-maszo-pallo-parna-szurke.png",
-    "price": 0,
-    "realWidth": 100,
-    "defaultWidth": 240,
-    "order": 23,
-    "active": true
-  },
-  {
-    "id": "montessori-montessori-hinta-pallo-maszofal-szurke",
-    "name": "Montessori Hinta Pallo Maszofal Szurke",
-    "category": "montessori",
-    "categoryName": "Montessori",
-    "image": "images/montessori/montessori-hinta-pallo-maszofal-szurke.png",
-    "price": 0,
-    "realWidth": 100,
-    "defaultWidth": 240,
-    "order": 24,
     "active": true
   },
   {
@@ -1352,7 +824,7 @@
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
-    "order": 25,
+    "order": 21,
     "active": true
   },
   {
@@ -1364,7 +836,7 @@
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
-    "order": 26,
+    "order": 22,
     "active": true
   },
   {
@@ -1376,43 +848,7 @@
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
-    "order": 27,
-    "active": true
-  },
-  {
-    "id": "montessori-montessori-maszoka-feher-takaro-rozsa",
-    "name": "Montessori Maszoka Feher Takaro Rozsa",
-    "category": "montessori",
-    "categoryName": "Montessori",
-    "image": "images/montessori/montessori-maszoka-feher-takaro-rozsa.png",
-    "price": 0,
-    "realWidth": 100,
-    "defaultWidth": 240,
-    "order": 28,
-    "active": true
-  },
-  {
-    "id": "montessori-montessori-maszoka-feher-takaro-szurke",
-    "name": "Montessori Maszoka Feher Takaro Szurke",
-    "category": "montessori",
-    "categoryName": "Montessori",
-    "image": "images/montessori/montessori-maszoka-feher-takaro-szurke.png",
-    "price": 0,
-    "realWidth": 100,
-    "defaultWidth": 240,
-    "order": 29,
-    "active": true
-  },
-  {
-    "id": "montessori-montessori-maszoka-feher",
-    "name": "Montessori Maszoka Feher",
-    "category": "montessori",
-    "categoryName": "Montessori",
-    "image": "images/montessori/montessori-maszoka-feher.png",
-    "price": 0,
-    "realWidth": 100,
-    "defaultWidth": 240,
-    "order": 30,
+    "order": 23,
     "active": true
   },
   {
@@ -1424,19 +860,7 @@
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
-    "order": 31,
-    "active": true
-  },
-  {
-    "id": "montessori-montessori-maszoka-fekete-takaro-szurke",
-    "name": "Montessori Maszoka Fekete Takaro Szurke",
-    "category": "montessori",
-    "categoryName": "Montessori",
-    "image": "images/montessori/montessori-maszoka-fekete-takaro-szurke.png",
-    "price": 0,
-    "realWidth": 100,
-    "defaultWidth": 240,
-    "order": 32,
+    "order": 24,
     "active": true
   },
   {
@@ -1448,43 +872,19 @@
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
-    "order": 33,
+    "order": 25,
     "active": true
   },
   {
-    "id": "montessori-montessori-maszoka-maszopallo-natur",
-    "name": "Montessori Maszoka Maszopallo Natur",
+    "id": "montessori-montessori-maszoka-natur",
+    "name": "Montessori Maszoka Natur",
     "category": "montessori",
     "categoryName": "Montessori",
-    "image": "images/montessori/montessori-maszoka-maszopallo-natur.png",
+    "image": "images/montessori/montessori-maszoka-natur.png",
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
-    "order": 34,
-    "active": true
-  },
-  {
-    "id": "montessori-montessori-maszoka-maszopallo",
-    "name": "Montessori Maszoka Maszopallo",
-    "category": "montessori",
-    "categoryName": "Montessori",
-    "image": "images/montessori/montessori-maszoka-maszopallo.png",
-    "price": 0,
-    "realWidth": 100,
-    "defaultWidth": 240,
-    "order": 35,
-    "active": true
-  },
-  {
-    "id": "montessori-montessori-maszoka-natur-takaro-rozsa",
-    "name": "Montessori Maszoka Natur Takaro Rozsa",
-    "category": "montessori",
-    "categoryName": "Montessori",
-    "image": "images/montessori/montessori-maszoka-natur-takaro-rozsa.png",
-    "price": 0,
-    "realWidth": 100,
-    "defaultWidth": 240,
-    "order": 36,
+    "order": 26,
     "active": true
   },
   {
@@ -1496,7 +896,7 @@
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
-    "order": 37,
+    "order": 27,
     "active": true
   },
   {
@@ -1508,7 +908,31 @@
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
-    "order": 38,
+    "order": 28,
+    "active": true
+  },
+  {
+    "id": "montessori-montessori-maszoka-takaro-rozsa",
+    "name": "Montessori Maszoka Takaro Rozsa",
+    "category": "montessori",
+    "categoryName": "Montessori",
+    "image": "images/montessori/montessori-maszoka-takaro-rozsa.png",
+    "price": 0,
+    "realWidth": 100,
+    "defaultWidth": 240,
+    "order": 29,
+    "active": true
+  },
+  {
+    "id": "montessori-montessori-maszoka-takaro-szurke",
+    "name": "Montessori Maszoka Takaro Szurke",
+    "category": "montessori",
+    "categoryName": "Montessori",
+    "image": "images/montessori/montessori-maszoka-takaro-szurke.png",
+    "price": 0,
+    "realWidth": 100,
+    "defaultWidth": 240,
+    "order": 30,
     "active": true
   },
   {
@@ -1520,31 +944,7 @@
     "price": 0,
     "realWidth": 100,
     "defaultWidth": 240,
-    "order": 39,
-    "active": true
-  },
-  {
-    "id": "montessori-montessori-pallo-natur",
-    "name": "Montessori Pallo Natur",
-    "category": "montessori",
-    "categoryName": "Montessori",
-    "image": "images/montessori/montessori-pallo-natur.png",
-    "price": 0,
-    "realWidth": 100,
-    "defaultWidth": 240,
-    "order": 40,
-    "active": true
-  },
-  {
-    "id": "sofas-barsony-barack",
-    "name": "Barsony Barack",
-    "category": "sofas",
-    "categoryName": "Kanapék",
-    "image": "images/sofas/barsony-barack.png",
-    "price": 0,
-    "realWidth": 120,
-    "defaultWidth": 260,
-    "order": 1,
+    "order": 31,
     "active": true
   },
   {
@@ -1556,7 +956,7 @@
     "price": 0,
     "realWidth": 120,
     "defaultWidth": 260,
-    "order": 2,
+    "order": 1,
     "active": true
   },
   {
@@ -1568,7 +968,7 @@
     "price": 0,
     "realWidth": 120,
     "defaultWidth": 260,
-    "order": 3,
+    "order": 2,
     "active": true
   },
   {
@@ -1580,7 +980,7 @@
     "price": 0,
     "realWidth": 120,
     "defaultWidth": 260,
-    "order": 4,
+    "order": 3,
     "active": true
   },
   {
@@ -1592,7 +992,7 @@
     "price": 0,
     "realWidth": 120,
     "defaultWidth": 260,
-    "order": 5,
+    "order": 4,
     "active": true
   },
   {
@@ -1604,7 +1004,7 @@
     "price": 0,
     "realWidth": 120,
     "defaultWidth": 260,
-    "order": 6,
+    "order": 5,
     "active": true
   },
   {
@@ -1616,19 +1016,7 @@
     "price": 0,
     "realWidth": 120,
     "defaultWidth": 260,
-    "order": 7,
-    "active": true
-  },
-  {
-    "id": "sofas-churros-sofa-bezs",
-    "name": "Churros Sofa Bezs",
-    "category": "sofas",
-    "categoryName": "Kanapék",
-    "image": "images/sofas/churros-sofa-bezs.png",
-    "price": 0,
-    "realWidth": 120,
-    "defaultWidth": 260,
-    "order": 8,
+    "order": 6,
     "active": true
   },
   {
@@ -1640,7 +1028,7 @@
     "price": 0,
     "realWidth": 120,
     "defaultWidth": 260,
-    "order": 9,
+    "order": 7,
     "active": true
   },
   {
@@ -1652,7 +1040,7 @@
     "price": 0,
     "realWidth": 120,
     "defaultWidth": 260,
-    "order": 10,
+    "order": 8,
     "active": true
   },
   {
@@ -1664,7 +1052,7 @@
     "price": 0,
     "realWidth": 120,
     "defaultWidth": 260,
-    "order": 11,
+    "order": 9,
     "active": true
   },
   {
@@ -1676,19 +1064,7 @@
     "price": 0,
     "realWidth": 120,
     "defaultWidth": 260,
-    "order": 12,
-    "active": true
-  },
-  {
-    "id": "sofas-selyem-sofa-ezust",
-    "name": "Selyem Sofa Ezust",
-    "category": "sofas",
-    "categoryName": "Kanapék",
-    "image": "images/sofas/selyem-sofa-ezust.png",
-    "price": 0,
-    "realWidth": 120,
-    "defaultWidth": 260,
-    "order": 13,
+    "order": 10,
     "active": true
   },
   {
@@ -1700,7 +1076,7 @@
     "price": 0,
     "realWidth": 120,
     "defaultWidth": 260,
-    "order": 14,
+    "order": 11,
     "active": true
   },
   {
@@ -1712,7 +1088,7 @@
     "price": 0,
     "realWidth": 120,
     "defaultWidth": 260,
-    "order": 15,
+    "order": 12,
     "active": true
   },
   {
@@ -1724,7 +1100,7 @@
     "price": 0,
     "realWidth": 120,
     "defaultWidth": 260,
-    "order": 16,
+    "order": 13,
     "active": true
   },
   {
@@ -1736,7 +1112,7 @@
     "price": 0,
     "realWidth": 120,
     "defaultWidth": 260,
-    "order": 17,
+    "order": 14,
     "active": true
   },
   {
@@ -1748,7 +1124,7 @@
     "price": 0,
     "realWidth": 120,
     "defaultWidth": 260,
-    "order": 18,
+    "order": 15,
     "active": true
   },
   {
@@ -1760,7 +1136,7 @@
     "price": 0,
     "realWidth": 120,
     "defaultWidth": 260,
-    "order": 19,
+    "order": 16,
     "active": true
   },
   {
@@ -1772,7 +1148,7 @@
     "price": 0,
     "realWidth": 120,
     "defaultWidth": 260,
-    "order": 20,
+    "order": 17,
     "active": true
   },
   {
@@ -1784,7 +1160,7 @@
     "price": 0,
     "realWidth": 120,
     "defaultWidth": 260,
-    "order": 21,
+    "order": 18,
     "active": true
   },
   {
@@ -1796,7 +1172,7 @@
     "price": 0,
     "realWidth": 120,
     "defaultWidth": 260,
-    "order": 22,
+    "order": 19,
     "active": true
   },
   {
@@ -1808,7 +1184,7 @@
     "price": 0,
     "realWidth": 120,
     "defaultWidth": 260,
-    "order": 23,
+    "order": 20,
     "active": true
   },
   {
@@ -1836,18 +1212,6 @@
     "active": true
   },
   {
-    "id": "textiles-babafeszek-pluss-ezust",
-    "name": "Babafeszek Pluss Ezust",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/babafeszek-pluss-ezust.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 3,
-    "active": true
-  },
-  {
     "id": "textiles-babafeszek-pluss-feher",
     "name": "Babafeszek Pluss Feher",
     "category": "textiles",
@@ -1856,7 +1220,7 @@
     "price": 0,
     "realWidth": 70,
     "defaultWidth": 160,
-    "order": 4,
+    "order": 3,
     "active": true
   },
   {
@@ -1868,7 +1232,7 @@
     "price": 0,
     "realWidth": 70,
     "defaultWidth": 160,
-    "order": 5,
+    "order": 4,
     "active": true
   },
   {
@@ -1880,7 +1244,7 @@
     "price": 0,
     "realWidth": 70,
     "defaultWidth": 160,
-    "order": 6,
+    "order": 5,
     "active": true
   },
   {
@@ -1892,307 +1256,31 @@
     "price": 0,
     "realWidth": 70,
     "defaultWidth": 160,
+    "order": 6,
+    "active": true
+  },
+  {
+    "id": "textiles-babafeszek-teddy-szurke",
+    "name": "Babafeszek Teddy Szurke",
+    "category": "textiles",
+    "categoryName": "Textilek",
+    "image": "images/textiles/babafeszek-teddy-szurke.png",
+    "price": 0,
+    "realWidth": 70,
+    "defaultWidth": 160,
     "order": 7,
     "active": true
   },
   {
-    "id": "textiles-babafeszek-pluss-szurke",
-    "name": "Babafeszek Pluss Szurke",
+    "id": "textiles-babafeszek-zold",
+    "name": "Babafeszek Zold",
     "category": "textiles",
     "categoryName": "Textilek",
-    "image": "images/textiles/babafeszek-pluss-szurke.png",
+    "image": "images/textiles/babafeszek-zold.png",
     "price": 0,
     "realWidth": 70,
     "defaultWidth": 160,
     "order": 8,
-    "active": true
-  },
-  {
-    "id": "textiles-babafeszek-pluss-zold",
-    "name": "Babafeszek Pluss Zold",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/babafeszek-pluss-zold.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 9,
-    "active": true
-  },
-  {
-    "id": "textiles-babafeszek-safari",
-    "name": "Babafeszek Safari",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/babafeszek-safari.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 10,
-    "active": true
-  },
-  {
-    "id": "textiles-babafeszek-tedy-feher",
-    "name": "Babafeszek Tedy Feher",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/babafeszek-tedy-feher.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 11,
-    "active": true
-  },
-  {
-    "id": "textiles-babafeszek-tedy-szurke",
-    "name": "Babafeszek Tedy Szurke",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/babafeszek-tedy-szurke.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 12,
-    "active": true
-  },
-  {
-    "id": "textiles-babafeszek-virag-rozsa",
-    "name": "Babafeszek Virag Rozsa",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/babafeszek-virag-rozsa.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 13,
-    "active": true
-  },
-  {
-    "id": "textiles-img-1406",
-    "name": "IMG 1406",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/IMG_1406.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 14,
-    "active": true
-  },
-  {
-    "id": "textiles-img-1407",
-    "name": "IMG 1407",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/IMG_1407.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 15,
-    "active": true
-  },
-  {
-    "id": "textiles-img-1416",
-    "name": "IMG 1416",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/IMG_1416.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 16,
-    "active": true
-  },
-  {
-    "id": "textiles-img-1423",
-    "name": "IMG 1423",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/IMG_1423.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 17,
-    "active": true
-  },
-  {
-    "id": "textiles-parna-ozike",
-    "name": "Parna Ozike",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/parna-ozike.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 18,
-    "active": true
-  },
-  {
-    "id": "textiles-parna-safari",
-    "name": "Parna Safari",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/parna-safari.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 19,
-    "active": true
-  },
-  {
-    "id": "textiles-parna-virag-rozsa",
-    "name": "Parna Virag Rozsa",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/parna-virag-rozsa.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 20,
-    "active": true
-  },
-  {
-    "id": "textiles-pelenkazo-alatet-virag-rozsa",
-    "name": "Pelenkazo Alatet Virag Rozsa",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/pelenkazo-alatet-virag-rozsa.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 21,
-    "active": true
-  },
-  {
-    "id": "textiles-pelenkazo-alatet-zold-level",
-    "name": "Pelenkazo Alatet Zold Level",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/pelenkazo-alatet-zold-level.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 22,
-    "active": true
-  },
-  {
-    "id": "textiles-szoptatos-parna-virag-rozsa",
-    "name": "Szoptatos Parna Virag Rozsa",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/szoptatos-parna-virag-rozsa.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 23,
-    "active": true
-  },
-  {
-    "id": "textiles-takaro-dino",
-    "name": "Takaro Dino",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/takaro-dino.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 24,
-    "active": true
-  },
-  {
-    "id": "textiles-takaro-parna-dino",
-    "name": "Takaro Parna Dino",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/takaro-parna-dino.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 25,
-    "active": true
-  },
-  {
-    "id": "textiles-takaro-parna-virag-rozsa",
-    "name": "Takaro Parna Virag Rozsa",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/takaro-parna-virag-rozsa.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 26,
-    "active": true
-  },
-  {
-    "id": "textiles-takaro-safari2",
-    "name": "Takaro Safari2",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/takaro-safari2.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 27,
-    "active": true
-  },
-  {
-    "id": "textiles-takaro-virag-rozsa-rozsa",
-    "name": "Takaro Virag Rozsa Rozsa",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/takaro-virag-rozsa-rozsa.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 28,
-    "active": true
-  },
-  {
-    "id": "textiles-takaro-virag-rozsa-rozsa2",
-    "name": "Takaro Virag Rozsa Rozsa2",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/takaro-virag-rozsa-rozsa2.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 29,
-    "active": true
-  },
-  {
-    "id": "textiles-takaro-virag-rozsa-szurke",
-    "name": "Takaro Virag Rozsa Szurke",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/takaro-virag-rozsa-szurke.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 30,
-    "active": true
-  },
-  {
-    "id": "textiles-takaro-virag-rozsa",
-    "name": "Takaro Virag Rozsa",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/takaro-virag-rozsa.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 31,
-    "active": true
-  },
-  {
-    "id": "textiles-takaro-virag-rozsa2",
-    "name": "Takaro Virag Rozsa2",
-    "category": "textiles",
-    "categoryName": "Textilek",
-    "image": "images/textiles/takaro-virag-rozsa2.png",
-    "price": 0,
-    "realWidth": 70,
-    "defaultWidth": 160,
-    "order": 32,
     "active": true
   },
   {
@@ -2208,11 +1296,11 @@
     "active": true
   },
   {
-    "id": "toys-auto-palya-kek",
-    "name": "Auto Palya Kek",
+    "id": "toys-auto-palya-oliva",
+    "name": "Auto Palya Oliva",
     "category": "toys",
     "categoryName": "Játékok",
-    "image": "images/toys/auto-palya-kek.png",
+    "image": "images/toys/auto-palya-oliva.png",
     "price": 0,
     "realWidth": 80,
     "defaultWidth": 190,
@@ -2244,11 +1332,11 @@
     "active": true
   },
   {
-    "id": "toys-fejleszto-asztal-bezs",
-    "name": "Fejleszto Asztal Bezs",
+    "id": "toys-baby-gym",
+    "name": "Baby Gym",
     "category": "toys",
     "categoryName": "Játékok",
-    "image": "images/toys/fejleszto-asztal-bezs.png",
+    "image": "images/toys/baby-gym.png",
     "price": 0,
     "realWidth": 80,
     "defaultWidth": 190,
@@ -2268,27 +1356,15 @@
     "active": true
   },
   {
-    "id": "toys-fejleszto-asztal-oliva",
-    "name": "Fejleszto Asztal Oliva",
+    "id": "toys-fejleyzto-asztal-rozsa",
+    "name": "Fejleyzto Asztal Rozsa",
     "category": "toys",
     "categoryName": "Játékok",
-    "image": "images/toys/fejleszto-asztal-oliva.png",
+    "image": "images/toys/fejleyzto-asztal-rozsa.png",
     "price": 0,
     "realWidth": 80,
     "defaultWidth": 190,
     "order": 7,
-    "active": true
-  },
-  {
-    "id": "toys-fejleszto-asztal-rozsa",
-    "name": "Fejleszto Asztal Rozsa",
-    "category": "toys",
-    "categoryName": "Játékok",
-    "image": "images/toys/fejleszto-asztal-rozsa.png",
-    "price": 0,
-    "realWidth": 80,
-    "defaultWidth": 190,
-    "order": 8,
     "active": true
   },
   {
@@ -2300,7 +1376,7 @@
     "price": 0,
     "realWidth": 80,
     "defaultWidth": 190,
-    "order": 9,
+    "order": 8,
     "active": true
   },
   {
@@ -2312,7 +1388,7 @@
     "price": 0,
     "realWidth": 80,
     "defaultWidth": 190,
-    "order": 10,
+    "order": 9,
     "active": true
   },
   {
@@ -2324,7 +1400,7 @@
     "price": 0,
     "realWidth": 80,
     "defaultWidth": 190,
-    "order": 11,
+    "order": 10,
     "active": true
   },
   {
@@ -2336,7 +1412,7 @@
     "price": 0,
     "realWidth": 80,
     "defaultWidth": 190,
-    "order": 12,
+    "order": 11,
     "active": true
   },
   {
@@ -2348,19 +1424,7 @@
     "price": 0,
     "realWidth": 80,
     "defaultWidth": 190,
-    "order": 13,
-    "active": true
-  },
-  {
-    "id": "toys-konyha-rozsa",
-    "name": "Konyha Rozsa",
-    "category": "toys",
-    "categoryName": "Játékok",
-    "image": "images/toys/konyha-rozsa.png",
-    "price": 0,
-    "realWidth": 80,
-    "defaultWidth": 190,
-    "order": 14,
+    "order": 12,
     "active": true
   },
   {
@@ -2372,19 +1436,7 @@
     "price": 0,
     "realWidth": 80,
     "defaultWidth": 190,
-    "order": 15,
-    "active": true
-  },
-  {
-    "id": "toys-vonat-oliva",
-    "name": "Vonat Oliva",
-    "category": "toys",
-    "categoryName": "Játékok",
-    "image": "images/toys/vonat-oliva.png",
-    "price": 0,
-    "realWidth": 80,
-    "defaultWidth": 190,
-    "order": 16,
+    "order": 13,
     "active": true
   },
   {
@@ -2396,31 +1448,7 @@
     "price": 0,
     "realWidth": 80,
     "defaultWidth": 190,
-    "order": 17,
-    "active": true
-  },
-  {
-    "id": "toys-zongora-bezs",
-    "name": "Zongora Bezs",
-    "category": "toys",
-    "categoryName": "Játékok",
-    "image": "images/toys/zongora-bezs.png",
-    "price": 0,
-    "realWidth": 80,
-    "defaultWidth": 190,
-    "order": 18,
-    "active": true
-  },
-  {
-    "id": "toys-zongora-kek",
-    "name": "Zongora Kek",
-    "category": "toys",
-    "categoryName": "Játékok",
-    "image": "images/toys/zongora-kek.png",
-    "price": 0,
-    "realWidth": 80,
-    "defaultWidth": 190,
-    "order": 19,
+    "order": 14,
     "active": true
   }
 ]

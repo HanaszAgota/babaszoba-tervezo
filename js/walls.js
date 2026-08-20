@@ -1,102 +1,413 @@
-document.addEventListener("DOMContentLoaded", function () {
- const walls = [
-   {
-     name: "Barackálom",
-     image: "images/walls/barackalom.png"
-   },
-   {
-     name: "Erdei Hajnal",
-     image: "images/walls/erdei-hajnal.png"
-   },
-   {
-     name: "Felhős Égbolt",
-     image: "images/walls/felhos-egbolt.png"
-   },
-   {
-     name: "Mályvarózsa",
-     image: "images/walls/malyvarozsa.png"
-   },
-   {
-     name: "Meleg Latte",
-     image: "images/walls/meleg-latte.png"
-   },
-   {
-     name: "Olíva Harmónia",
-     image: "images/walls/oliva-harmonia.png"
-   },
-   {
-     name: "Púderfelhő",
-     image: "images/walls/puderfelho.png"
-   },
-   {
-     name: "Selyemhomok",
-     image: "images/walls/selyemhomok.png"
-   },
-   {
-     name: "Tiszta Forrás",
-     image: "images/walls/tiszta-forras.png"
-   },
- ];
+"use strict";
 
- 
+document.addEventListener(
+   "DOMContentLoaded",
+   function () {
 
- const wallsButton = document.querySelector(
-   '.category-tab[data-category="walls"]'
- );
+       /* =====================================================
+          DEKORFALAK
+       ====================================================== */
 
- const productList = document.getElementById("product-list");
- const roomCanvas = document.getElementById("room-canvas");
+       const walls = [
 
- function showWalls() {
-   productList.innerHTML = "";
+           {
+               id: "barackalom",
+               name: "Barackálom",
+               category: "walls",
+               image: "images/walls/barackalom.png",
+               image3d:"images/walls/barackalom-3d.png"
+           },
 
-   walls.forEach(function (wall) {
-     const card = document.createElement("button");
+           {
+               id: "erdei-hajnal",
+               name: "Erdei Hajnal",
+               category: "walls",
+               image: "images/walls/erdei-hajnal.png",
+               image3d:"images/walls/erdei-hajnal-3d.png"
+           },
 
-     card.type = "button";
-     card.className = "wall-product-card";
+           {
+               id: "felhos-egbolt",
+               name: "Felhős Égbolt",
+               category: "walls",
+               image: "images/walls/felhos-egbolt.png",
+               image3d:"images/walls/felhos-egbolt-3d.png"
+           },
 
-     card.innerHTML = `
-       <img src="${wall.image}" alt="${wall.name}">
-       <span>${wall.name}</span>
-     `;
+           {
+               id: "malyvarozsa",
+               name: "Mályvarózsa",
+               category: "walls",
+               image: "images/walls/malyvarozsa.png",
+               image3d:"images/walls/malyvarozsa-3d.png"
+           },
 
-     card.addEventListener("click", function () {
-       roomCanvas.style.backgroundImage = `url("${wall.image}")`;
-       roomCanvas.style.backgroundSize = "cover";
-       roomCanvas.style.backgroundPosition = "center top";
-       roomCanvas.style.backgroundRepeat = "no-repeat";
+           {
+               id: "meleg-latte",
+               name: "Meleg Latte",
+               category: "walls",
+               image: "images/walls/meleg-latte.png",
+               image3d:"images/walls/meleg-latte-3d.png"
+           },
 
-       const placeholder =
-         roomCanvas.querySelector(".canvas-placeholder");
+           {
+               id: "oliva-harmonia",
+               name: "Olíva Harmónia",
+               category: "walls",
+               image: "images/walls/oliva-harmonia.png",
+               image3d:"images/walls/oliva-harmonia-3d.png"
+           },
 
-       if (placeholder) {
-         placeholder.style.display = "none";
+           {
+               id: "puderfelho",
+               name: "Púderfelhő",
+               category: "walls",
+               image: "images/walls/puderfelho.png",
+               image3d:"images/walls/puderfelho-3d.png"
+           },
+
+           {
+               id: "selyemhomok",
+               name: "Selyemhomok",
+               category: "walls",
+               image: "images/walls/selyemhomok.png",
+               image3d:"images/walls/selyemhomok-3d.png"
+           },
+
+           {
+               id: "tiszta-forras",
+               name: "Tiszta Forrás",
+               category: "walls",
+               image: "images/walls/tiszta-forras.png",
+               image3d:"images/walls/tiszta-forras-3d.png"
+           }
+
+       ];
+
+
+       /* =====================================================
+          HTML ELEMEK
+       ====================================================== */
+
+       const wallsButton =
+           document.querySelector(
+               '.category-tab[data-category="walls"]'
+           );
+
+
+       const productList =
+           document.getElementById(
+               "product-list"
+           );
+
+
+       const roomCanvas =
+           document.getElementById(
+               "room-canvas"
+           );
+
+
+       const room3dView =
+           document.getElementById(
+               "room-3d-view"
+           );
+
+
+       const threeDFrame =
+           document.getElementById(
+               "three-d-frame"
+           );
+
+
+       if (
+           !wallsButton ||
+           !productList ||
+           !roomCanvas
+       ) {
+
+           console.error(
+               "A dekorfalakhoz szükséges HTML-elemek nem találhatók."
+           );
+
+           return;
        }
 
-       document
-         .querySelectorAll(".wall-product-card")
-         .forEach(function (item) {
-           item.classList.remove("selected");
-         });
 
-       card.classList.add("selected");
-     });
+       /* =====================================================
+          3D NÉZET AKTÍV?
+       ====================================================== */
 
-     productList.appendChild(card);
-   });
- }
+       function isThreeDViewActive() {
 
- if (wallsButton) {
-   wallsButton.addEventListener("click", function () {
-     document
-       .querySelectorAll(".category-tab")
-       .forEach(function (button) {
-         button.classList.remove("active");
-       });
+           return (
+               room3dView &&
+               !room3dView.hidden
+           );
+       }
 
-     wallsButton.classList.add("active");
-     showWalls();
-   });
- }
-});
+
+       /* =====================================================
+          DEKORFAL ALKALMAZÁSA
+       ====================================================== */
+
+       function applySelectedWall(
+           wall,
+           card
+       ) {
+
+           /* =============================================
+              3D NÉZET
+           ============================================== */
+
+           if (
+               isThreeDViewActive()
+           ) {
+
+               if (
+                   !threeDFrame ||
+                   !threeDFrame.contentWindow
+               ) {
+
+                   console.error(
+                       "A 3D iframe nem található."
+                   );
+
+                   return;
+               }
+
+
+               threeDFrame.contentWindow.postMessage(
+                   {
+
+                       type:
+                           "MINIQUE_APPLY_3D_WALL",
+
+                       product: {
+                           id: wall.id,
+                           name: wall.name,
+                           category: wall.category,
+                           image: 
+                                  wall.image3d || wall.image
+                       }
+
+                   },
+
+                   window.location.origin
+               );
+
+
+               console.log(
+                   "Dekorfal elküldve a 3D szobának:",
+                   wall.name
+               );
+
+
+               markSelectedCard(
+                   card
+               );
+
+
+               return;
+           }
+
+
+           /* =============================================
+              2D NÉZET
+           ============================================== */
+
+           roomCanvas.style.backgroundImage =
+               `url("${wall.image}")`;
+
+
+           roomCanvas.style.backgroundSize =
+               "cover";
+
+
+           roomCanvas.style.backgroundPosition =
+               "center top";
+
+
+           roomCanvas.style.backgroundRepeat =
+               "no-repeat";
+
+
+           const placeholder =
+               roomCanvas.querySelector(
+                   ".canvas-placeholder"
+               );
+
+
+           if (
+               placeholder
+           ) {
+
+               placeholder.style.display =
+                   "none";
+           }
+
+
+           markSelectedCard(
+               card
+           );
+       }
+
+
+       /* =====================================================
+          KIJELÖLT KÁRTYA
+       ====================================================== */
+
+       function markSelectedCard(
+           selectedCard
+       ) {
+
+           document
+               .querySelectorAll(
+                   ".wall-product-card"
+               )
+               .forEach(
+                   function (card) {
+
+                       card.classList.remove(
+                           "selected"
+                       );
+                   }
+               );
+
+
+           if (
+               selectedCard
+           ) {
+
+               selectedCard.classList.add(
+                   "selected"
+               );
+           }
+       }
+
+
+       /* =====================================================
+          DEKORFALAK LISTÁZÁSA
+       ====================================================== */
+
+       function showWalls() {
+
+           productList.innerHTML =
+               "";
+
+
+           walls.forEach(
+               function (wall) {
+
+                   const card =
+                       document.createElement(
+                           "button"
+                       );
+
+
+                   card.type =
+                       "button";
+
+
+                   card.className =
+                       "wall-product-card";
+
+
+                   card.dataset.wallId =
+                       wall.id;
+
+
+                   const image =
+                       document.createElement(
+                           "img"
+                       );
+
+
+                   image.src =
+                       wall.image;
+
+
+                   image.alt =
+                       wall.name;
+
+
+                   image.draggable =
+                       false;
+
+
+                   const name =
+                       document.createElement(
+                           "span"
+                       );
+
+
+                   name.textContent =
+                       wall.name;
+
+
+                   card.appendChild(
+                       image
+                   );
+
+
+                   card.appendChild(
+                       name
+                   );
+
+
+                   card.addEventListener(
+                       "click",
+                       function () {
+
+                           applySelectedWall(
+                               wall,
+                               card
+                           );
+
+                       }
+                   );
+
+
+                   productList.appendChild(
+                       card
+                   );
+               }
+           );
+       }
+
+
+       /* =====================================================
+          DEKOR FALAK KATEGÓRIA
+       ====================================================== */
+
+       wallsButton.addEventListener(
+           "click",
+           function () {
+
+               document
+                   .querySelectorAll(
+                       ".category-tab"
+                   )
+                   .forEach(
+                       function (
+                           button
+                       ) {
+
+                           button.classList.remove(
+                               "active"
+                           );
+                       }
+                   );
+
+
+               wallsButton.classList.add(
+                   "active"
+               );
+
+
+               showWalls();
+
+           }
+       );
+
+   }
+);
